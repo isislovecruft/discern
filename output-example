@@ -1,0 +1,970 @@
+Initializing DISCERN from init:
+[ Set babbling = 1 ]
+[ Set nslot = 7 ]
+[ Set ncase = 6 ]
+Reading lexical representations from lreps...106 reps.
+Reading semantic representations from sreps...118 reps (38 instances).
+Reading processing modules from procsimu...Done.
+Reading hierarchical feature maps from hfmsimu...Done.
+Reading lexicon from lexsimu...Done.
+[ Set chain = 1 ]
+[ Set withlex = 1 ]
+[ Set withhfm = 1 ]
+[ Set babbling = 1 ]
+[ Set print_mistakes = 0 ]
+[ Set log_lexicon = 0 ]
+[ Set ignore_stops = 0 ]
+[ Set topsearch = 3.000000 ]
+[ Set midsearch = 1.000000 ]
+[ Set tracenc = 2 ]
+[ Set tsettle = 10 ]
+[ Set epsilon = 0.000100 ]
+[ Set aliveact = 0.500000 ]
+[ Set minact = 0.500000 ]
+[ Set maxact = 2.000000 ]
+[ Set gammaexc = 0.500000 ]
+[ Set gammainh = -0.100000 ]
+[ Clearing networks ]
+[ Set withinerr = 0.150000 ]
+System initialization complete.
+DISCERN> [ Set ignore_stops = 1 ]
+DISCERN> [ Reading input from input-example... ]
+[ ***** 11.2 Example run ***** ]
+[ Set chain = 1 ]
+[ Set withlex = 1 ]
+[ Set withhfm = 1 ]
+[ Set babbling = 1 ]
+[ Set print_mistakes = 0 ]
+[ Set log_lexicon = 1 ]
+[ Set topsearch = 3.000000 ]
+[ Set midsearch = 1.000000 ]
+[ Set tracenc = 2 ]
+[ Set tsettle = 9 ]
+[ Set epsilon = 0.000100 ]
+[ Set aliveact = 0.500000 ]
+[ Set minact = 0.500000 ]
+[ Set maxact = 2.500000 ]
+[ Set gammaexc = 0.370000 ]
+[ Set gammainh = -0.100000 ]
+[ Set withinerr = 0.150000 ]
+[ Clearing networks ]
+[ Initializing statistics ]
+[ Read and paraphrase story ]
+
+[ parsing input story: ]
+JOHN>John WENT>went TO>to DENNY'S>Denny's .>. 
+| John went _ _ _ Denny's |
+JOHN>John ASKED>asked THE>the WAITER>waiter FOR>for FISH>fish .>. 
+| John asked waiter _ fish _ |
+JOHN>John ATE>ate A>a BAD>bad FISH>fish .>. 
+| John ate _ bad fish _ |
+
+[ into internal rep: ]
+| $restaurant $coffee John fish Denny's bad small |
+
+[ storing into episodic memory: ]
+[ image units (0,0), (1,1), (3,6): ]
+| $restaurant $coffee John fish Denny's bad small |
+
+[ generating paraphrase: ]
+| John went _ _ _ Denny's |
+John>John>JOHN went>went>WENT to>to>TO Denny's>Denny's>DENNY'S .>.>. 
+| John seated _ _ John _ |
+John>John>JOHN seated>seated>SEATED John>John>JOHN .>.>. 
+| John asked waiter _ fish _ |
+John>John>JOHN asked>asked>ASKED the>the>THE waiter>waiter>WAITER for>for>FOR fish>fish>FISH .>.>. 
+| John ate _ bad fish _ |
+John>John>JOHN ate>ate>ATE a>a>A bad>bad>BAD fish>fish>FISH .>.>. 
+| John left waiter small tip _ |
+John>John>JOHN left>left>LEFT a>a>A small>small>SMALL tip>tip>TIP .>.>. 
+| John paid cashier _ _ _ |
+John>John>JOHN paid>paid>PAID the>the>THE cashier>cashier>CASHIER .>.>. 
+| John left _ _ _ Denny's |
+John>John>JOHN left>left>LEFT Denny's>Denny's>DENNY'S .>.>. 
+
+[ Set log_lexicon = 0 ]
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+MARY WENT TO LEONE'S . 
+| Mary went _ _ _ Leone's |
+MARY ASKED THE WAITER FOR STEAK . 
+| Mary asked waiter _ steak _ |
+MARY LEFT A BIG TIP . 
+| Mary left waiter big tip _ |
+
+[ into internal rep: ]
+| $restaurant $fancy Mary steak Leone's good big |
+
+[ storing into episodic memory: ]
+[ image units (0,0), (0,0), (7,1): ]
+| $restaurant $fancy Mary steak Leone's good big |
+
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+MARY WENT TO CIRCUITCTY . 
+| Mary went _ _ _ CircuitCty |
+MARY LOOKED FOR GOOD TV . 
+| Mary looked _ good tv _ |
+MARY TOOK THE BEST TV . 
+| Mary took _ best tv _ |
+
+[ into internal rep: ]
+| $shopping $electronics Mary tv CircuitCty _ _ |
+
+[ storing into episodic memory: ]
+[ image units (1,0), (1,0), (7,1): ]
+| $shopping $electronics Mary tv CircuitCty _ _ |
+
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+JOHN WENT TO RADIOSHACK . 
+| John went _ _ _ RadioShack |
+JOHN LOOKED FOR GOOD TV . 
+| John looked _ good tv _ |
+JOHN TOOK THE BEST TV . 
+| John took _ best tv _ |
+
+[ into internal rep: ]
+| $shopping $electronics John tv RadioShack _ _ |
+
+[ storing into episodic memory: ]
+[ image units (1,0), (1,0), (1,6): ]
+| $shopping $electronics John tv RadioShack _ _ |
+
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+MARY WENT TO DFW . 
+| Mary went _ _ _ dfw |
+MARY CHECKED-IN FOR A FLIGHT TO SFO . 
+| Mary checked-in _ sfo flight _ |
+THE PLANE ARRIVED AT SFO . 
+| plane arrived _ _ _ sfo |
+
+[ into internal rep: ]
+| $travel $plane Mary dfw sfo big _ |
+
+[ storing into episodic memory: ]
+[ image units (1,1), (1,0), (1,0): ]
+| $travel $plane Mary dfw sfo big _ |
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHAT DID MARY EAT AT LEONE'S ? 
+| Mary ate _ _ what Leone's |
+
+[ into cue: ]
+| $restaurant $fancy Mary steak Leone's good *from(big)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,0): ->(4,3):0.741 ->(7,1):0.944 ->(7,1):0.989 ->(7,1):0.989 ->(7,1):0.995 ->(7,1):0.994 ->(7,1):0.997 ->(7,1):0.996 ->(7,1):0.997 ]
+[ image units (0,0), (0,0), (7,1): ]
+| $restaurant $fancy Mary steak Leone's good big |
+
+[ generating answer: ]
+| Mary ate _ good steak _ |
+MARY ATE A GOOD STEAK . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+HOW DID MARY LIKE STEAK AT LEONE'S ? 
+| Mary thought _ what steak Leone's |
+
+[ into cue: ]
+| $restaurant $fancy Mary steak Leone's good *from(big)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,0): ->(4,3):0.741 ->(7,1):0.949 ->(7,1):0.989 ->(7,1):0.990 ->(7,1):0.995 ->(7,1):0.995 ->(7,1):0.997 ->(7,1):0.996 ->(7,1):0.998 ]
+[ image units (0,0), (0,0), (7,1): ]
+| $restaurant $fancy Mary steak Leone's good big |
+
+[ generating answer: ]
+| Mary thought _ good steak Leone's |
+MARY THOUGHT STEAK WAS GOOD AT LEONE'S . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHERE DID MARY TAKE A PLANE TO ? 
+| Mary took _ _ plane where |
+
+[ into cue: ]
+| $travel $plane Mary *lax(dfw)* sfo big _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,1), (1,0): ->(4,3):0.711 ->(1,0):0.563 ->(1,0):0.862 ->(1,0):0.734 ->(1,0):0.903 ->(1,0):0.779 ->(1,0):0.916 ->(1,0):0.798 ->(1,0):0.921 ]
+[ image units (1,1), (1,0), (1,0): ]
+| $travel $plane Mary dfw sfo big _ |
+
+[ generating answer: ]
+| Mary took _ _ plane sfo |
+MARY TOOK A PLANE TO SFO . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+DID MARY TRAVEL BIG DISTANCE TO SFO ? 
+| Mary traveled _ big distance sfo |
+
+[ into cue: ]
+| $travel $plane Mary *lax(dfw)* sfo big _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,1), (1,0): ->(2,3):0.717 ->(1,0):0.565 ->(1,0):0.867 ->(1,0):0.726 ->(1,0):0.904 ->(1,0):0.767 ->(1,0):0.915 ->(1,0):0.783 ->(1,0):0.919 ]
+[ image units (1,1), (1,0), (1,0): ]
+| $travel $plane Mary dfw sfo big _ |
+
+[ generating answer: ]
+| Mary traveled _ big distance _ |
+MARY TRAVELED A BIG DISTANCE . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHERE DID JOHN EAT FISH ? 
+| John ate _ _ fish where |
+
+[ into cue: ]
+| $restaurant $coffee John fish Denny's bad *from(small)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (1,1): ->(4,3):0.733 ->(3,6):0.965 ->(3,6):0.993 ->(3,6):0.993 ->(3,6):0.996 ->(3,6):0.996 ->(3,6):0.998 ->(3,6):0.997 ->(3,6):0.998 ]
+[ image units (0,0), (1,1), (3,6): ]
+| $restaurant $coffee John fish Denny's bad small |
+
+[ generating answer: ]
+| John ate _ _ fish Denny's |
+JOHN ATE FISH AT DENNY'S . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHERE DID MARY BUY TV ? 
+| Mary bought _ _ tv where |
+
+[ into cue: ]
+| $shopping $electronics Mary tv CircuitCty _ _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,0), (1,0): ->(7,1):0.701 ->(7,1):0.931 ->(7,1):0.964 ->(7,1):0.963 ->(7,1):0.971 ->(7,1):0.972 ->(7,1):0.975 ->(7,1):0.975 ->(7,1):0.976 ]
+[ image units (1,0), (1,0), (7,1): ]
+| $shopping $electronics Mary tv CircuitCty _ _ |
+
+[ generating answer: ]
+| Mary bought _ _ tv CircuitCty |
+MARY BOUGHT TV AT CIRCUITCTY . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHERE DID JOHN BUY TV ? 
+| John bought _ _ tv where |
+
+[ into cue: ]
+| $shopping $electronics John tv RadioShack _ _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,0), (1,0): ->(1,6):0.710 ->(1,6):0.937 ->(1,6):0.972 ->(1,6):0.969 ->(1,6):0.975 ->(1,6):0.974 ->(1,6):0.976 ->(1,6):0.975 ->(1,6):0.975 ]
+[ image units (1,0), (1,0), (1,6): ]
+| $shopping $electronics John tv RadioShack _ _ |
+
+[ generating answer: ]
+| John bought _ _ tv RadioShack |
+JOHN BOUGHT TV AT RADIOSHACK . 
+
+[ Set midsearch = 3.000000 ]
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHO ATE ? 
+| who ate _ _ *.(fish)* Denny's |
+
+[ into cue: ]
+| $restaurant $coffee *Mary(John)* *spaghetti(fish)* Denny's *.(bad)* *from(small)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,0): ->(3,3):0.741 ->(7,1):0.933 ->(7,1):0.986 ->(7,1):0.986 ->(7,1):0.993 ->(7,1):0.992 ->(7,1):0.996 ->(7,1):0.995 ->(7,1):0.997 ]
+[ map (0,0), (0,1): ->(1,0):0.701 ->(1,0):0.000 ->(1,0):0.701 ->(1,0):0.000 ]
+[ map (0,0), (1,1): ->(4,3):0.737 ->(3,6):0.963 ->(3,6):0.993 ->(3,6):0.993 ->(3,6):0.996 ->(3,6):0.996 ->(3,6):0.998 ->(3,6):0.997 ->(3,6):0.998 ]
+[ image units (0,0), (1,1), (3,6): ]
+| $restaurant $coffee John fish Denny's bad small |
+
+[ generating answer: ]
+| John did _ _ _ _ |
+JOHN DID . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHO ATE STEAK ? 
+| who ate _ _ steak *MaMaison(Leone's)* |
+
+[ into cue: ]
+| $restaurant $fancy Mary steak *MaMaison(Leone's)* good *from(big)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,0): ->(4,3):0.739 ->(7,1):0.941 ->(7,1):0.988 ->(7,1):0.988 ->(7,1):0.994 ->(7,1):0.994 ->(7,1):0.996 ->(7,1):0.995 ->(7,1):0.997 ]
+[ map (0,0), (1,1): ->(5,3):0.712 ->(3,6):0.909 ->(3,6):0.980 ->(3,6):0.975 ->(3,6):0.987 ->(3,6):0.982 ->(3,6):0.990 ->(3,6):0.985 ->(3,6):0.991 ]
+[ image units (0,0), (0,0), (7,1): ]
+| $restaurant $fancy Mary steak Leone's good big |
+
+[ generating answer: ]
+| Mary did _ _ _ _ |
+MARY DID . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHAT DID JOHN EAT ? 
+| John ate _ _ what Denny's |
+
+[ into cue: ]
+| $restaurant $coffee John fish Denny's *.(bad)* *from(small)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,0): ->(6,3):0.697 ->(7,1):0.920 ->(7,1):0.983 ->(7,1):0.983 ->(7,1):0.992 ->(7,1):0.990 ->(7,1):0.995 ->(7,1):0.993 ->(7,1):0.996 ]
+[ map (0,0), (0,1): ->(1,6):0.713 ->(1,6):0.000 ->(1,6):0.713 ->(1,6):0.000 ]
+[ map (0,0), (1,1): ->(4,3):0.734 ->(3,6):0.966 ->(3,6):0.994 ->(3,6):0.993 ->(3,6):0.996 ->(3,6):0.996 ->(3,6):0.998 ->(3,6):0.997 ->(3,6):0.998 ]
+[ image units (0,0), (1,1), (3,6): ]
+| $restaurant $coffee John fish Denny's bad small |
+
+[ generating answer: ]
+| John ate _ bad fish _ |
+JOHN ATE A BAD FISH . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHO BOUGHT TV ? 
+| who bought _ _ tv RadioShack |
+
+[ into cue: ]
+| $shopping $electronics John tv *CircuitCty(RadioShack)* _ _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,0), (0,0): ->(5,1):0.713 ->(5,1):0.000 ->(5,1):0.713 ->(5,1):0.000 ]
+[ map (1,0), (0,1): ->(6,0):0.706 ->(6,0):0.000 ->(6,0):0.705 ->(6,0):0.000 ]
+[ map (1,0), (1,0): ->(6,4):0.703 ->(1,6):0.913 ->(1,6):0.959 ->(1,6):0.953 ->(1,6):0.961 ->(1,6):0.959 ->(1,6):0.962 ->(1,6):0.960 ->(1,6):0.961 ]
+[ image units (1,0), (1,0), (1,6): ]
+| $shopping $electronics John tv RadioShack _ _ |
+
+[ generating answer: ]
+| John did _ _ _ _ |
+JOHN DID . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHO BOUGHT TV AT CIRCUITCTY ? 
+| who bought _ _ tv CircuitCty |
+
+[ into cue: ]
+| $shopping $electronics *John(Mary)* tv CircuitCty _ _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,0), (0,0): ->(1,2):0.713 ->(1,2):0.000 ->(1,2):0.713 ->(1,2):0.000 ]
+[ map (1,0), (0,1): ->(1,7):0.715 ->(1,7):0.000 ->(1,7):0.715 ->(1,7):0.000 ]
+[ map (1,0), (1,0): ->(0,5):0.717 ->(7,1):0.913 ->(7,1):0.953 ->(7,1):0.949 ->(7,1):0.959 ->(7,1):0.959 ->(7,1):0.963 ->(7,1):0.962 ->(7,1):0.963 ]
+[ image units (1,0), (1,0), (7,1): ]
+| $shopping $electronics Mary tv CircuitCty _ _ |
+
+[ generating answer: ]
+| Mary did _ _ _ _ |
+MARY DID . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+HOW DID MARY LIKE LOBSTER AT LEONE'S ? 
+| Mary thought _ what *lobster(steak)* Leone's |
+
+[ into cue: ]
+| $restaurant $fancy Mary *lobster(steak)* Leone's good *from(big)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,0): ->(4,3):0.750 ->(7,1):0.943 ->(7,1):0.988 ->(7,1):0.989 ->(7,1):0.995 ->(7,1):0.994 ->(7,1):0.997 ->(7,1):0.996 ->(7,1):0.997 ]
+[ map (0,0), (1,1): ->(0,3):0.713 ->(3,6):0.889 ->(3,6):0.975 ->(3,6):0.969 ->(3,6):0.983 ->(3,6):0.976 ->(3,6):0.987 ->(3,6):0.980 ->(3,6):0.988 ]
+[ image units (0,0), (0,0), (7,1): ]
+| $restaurant $fancy Mary steak Leone's good big |
+
+[ generating answer: ]
+| Mary thought _ good steak Leone's |
+MARY THOUGHT STEAK WAS GOOD AT LEONE'S . 
+
+[ Stop command ignored ]
+[ Set midsearch = 1.000000 ]
+[ Answer question ]
+
+[ parsing question: ]
+WHAT DID JOHN TAKE TO JFK ? 
+| John took _ _ what jfk |
+
+[ into cue: ]
+| $travel $plane John *dfw(lax)* jfk big _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,1), (1,0): ->(6,5):0.728 ->(1,0):0.313 ->(1,0):0.709 ->(1,0):0.412 ]
+[ oops: no image found ]
+
+[ Clearing networks ]
+[ Stop command ignored ]
+[ Read and paraphrase story ]
+
+[ parsing input story: ]
+JOHN WENT TO DENNY'S . 
+| John went _ _ _ Denny's |
+JOHN ASKED THE WAITER FOR FISH . 
+| John asked waiter _ fish _ |
+JOHN ATE A BAD FISH . 
+| John ate _ bad fish _ |
+JOHN PAID THE CASHIER . 
+| John paid cashier _ _ _ |
+JOHN LEFT A SMALL TIP . 
+| John left waiter small tip _ |
+
+[ into internal rep: ]
+| $restaurant $coffee John fish Denny's bad small |
+
+[ storing into episodic memory: ]
+[ image units (0,0), (1,1), (3,6): ]
+| $restaurant $coffee John fish Denny's bad small |
+
+[ generating paraphrase: ]
+| John went _ _ _ Denny's |
+JOHN WENT TO DENNY'S . 
+| John seated _ _ John _ |
+JOHN SEATED JOHN . 
+| John asked waiter _ fish _ |
+JOHN ASKED THE WAITER FOR FISH . 
+| John ate _ bad fish _ |
+JOHN ATE A BAD FISH . 
+| John *left(paid)* *waiter(cashier)* *small(_)* *tip(_)* _ |
+JOHN *LEFT(PAID)* *A(THE)* *SMALL(CASHIER)* *TIP(.)* 
+| John *paid(left)* *cashier(waiter)* *_(small)* *_(tip)* _ |
+JOHN *PAID(LEFT)* *THE(A)* *CASHIER(SMALL)* *.(TIP)* *FRIES(.)* 
+| John left _ _ _ Denny's |
+JOHN LEFT DENNY'S . 
+
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+JOHN WENT TO DENNY'S . 
+| John went _ _ _ Denny's |
+JOHN ASKED THE WAITER FOR FISH . 
+| John asked waiter _ fish _ |
+JOHN LEFT A SMALL TIP . 
+| John left waiter small tip _ |
+JOHN ATE A BAD FISH . 
+| John ate _ bad fish _ |
+JOHN PAID THE CASHIER . 
+| John paid cashier _ _ _ |
+
+[ into internal rep: ]
+| $restaurant $coffee John fish *Norms(Denny's)* bad small |
+
+[ storing into episodic memory: ]
+[ image units (0,0), (1,1), (4,7): ]
+| $restaurant $coffee John fish *Norms(Denny's)* bad small |
+
+[ ***** 11.3 Cleaning Up Errors  ***** ]
+[ Set maxact = 2.000000 ]
+[ Set gammaexc = 0.500000 ]
+[ Stop command ignored ]
+[ Clearing networks ]
+[ Read story ]
+
+[ parsing input story: ]
+MARY WENT TO BURGERKING . 
+| Mary went _ _ _ BurgerKing |
+MARY ASKED THE CASHIER FOR HAMBURGER . 
+| Mary asked cashier _ hamburger _ |
+MARY PAID THE CASHIER . 
+| Mary paid cashier _ _ _ |
+MARY SEATED MARY . 
+| Mary seated _ _ Mary _ |
+MARY ATE A SMALL HAMBURGER . 
+| Mary ate _ small hamburger _ |
+THE HAMBURGER TASTED BAD . 
+| *John(Mary)* tasted _ bad hamburger _ |
+MARY LEFT BURGERKING . 
+| Mary left _ _ _ BurgerKing |
+
+[ into internal rep: ]
+| $restaurant $fast Mary hamburger BurgerKing bad none |
+
+[ storing into episodic memory: ]
+[ image units (0,0), (0,1), (3,4): ]
+| $restaurant $fast Mary hamburger BurgerKing bad none |
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+HOW DID MARY LIKE HAMBURGER AT BURGERKING ? 
+| Mary thought _ what *fries(hamburger)* BurgerKing |
+
+[ into cue: ]
+| $restaurant $fast Mary *fries(hamburger)* BurgerKing bad none |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,1): ->(6,0):0.672 ->(3,4):0.900 ->(3,4):0.978 ->(3,4):0.973 ->(3,4):0.987 ->(3,4):0.981 ->(3,4):0.990 ->(3,4):0.984 ->(3,4):0.991 ]
+[ image units (0,0), (0,1), (3,4): ]
+| $restaurant $fast Mary hamburger BurgerKing bad none |
+
+[ generating answer: ]
+| Mary thought _ bad hamburger BurgerKing |
+MARY THOUGHT HAMBURGER WAS BAD AT BURGERKING . 
+
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+JOHN WENT TO LEONE'S . 
+| John went _ _ _ Leone's |
+JOHN ASKED THE WAITER FOR LOBSTER . 
+| John asked waiter _ lobster _ |
+JOHN LEFT A SMALL TIP . 
+| John left waiter small tip _ |
+
+[ into internal rep: ]
+| $restaurant $fancy John *?(lobster)* Leone's good small |
+
+[ storing into episodic memory: ]
+[ image units (0,0), (0,0), (7,7): ]
+| $restaurant $fancy John lobster Leone's good small |
+
+[ Stop command ignored ]
+[ Read and paraphrase story ]
+
+[ parsing input story: ]
+MARY WENT TO CENTRALSTA . 
+| Mary went _ _ _ CentralSta |
+MARY BOUGHT A TICKET TO NEWYORK . 
+| Mary bought _ NewYork ticket _ |
+MARY GOT-OFF AT NEWYORK . 
+| Mary got-off _ _ _ NewYork |
+
+[ into internal rep: ]
+| $travel $train Mary CentralSta NewYork *travel(small)* _ |
+
+[ storing into episodic memory: ]
+[ image units (1,1), (1,1), (2,3): ]
+| $travel $train Mary CentralSta NewYork *from(small)* _ |
+
+[ generating paraphrase: ]
+| Mary went _ _ _ CentralSta |
+MARY WENT TO CENTRALSTA . 
+| Mary bought _ NewYork ticket _ |
+MARY BOUGHT A TICKET TO NEWYORK . 
+| Mary got-on _ _ _ train |
+MARY GOT-ON THE TRAIN . 
+| conductor punched _ _ ticket _ |
+THE CONDUCTOR PUNCHED THE TICKET . 
+| Mary traveled _ small distance _ |
+MARY TRAVELED A SMALL DISTANCE . 
+| Mary got-off _ _ _ NewYork |
+MARY GOT-OFF AT NEWYORK . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+DID MARY TRAVEL BIG DISTANCE TO NEWYORK ? 
+| Mary traveled _ big distance NewYork |
+
+[ into cue: ]
+| $travel $train Mary CentralSta NewYork *from(small)* _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,1), (1,1): ->(3,3):0.682 ->(2,3):0.991 ->(2,3):0.999 ->(2,3):0.999 ->(2,3):0.999 ->(2,3):0.999 ->(2,3):0.999 ->(2,3):0.999 ->(2,3):1.000 ]
+[ image units (1,1), (1,1), (2,3): ]
+| $travel $train Mary CentralSta NewYork *from(small)* _ |
+
+[ generating answer: ]
+| Mary traveled _ small distance _ |
+MARY TRAVELED A SMALL DISTANCE . 
+
+[ Stop command ignored ]
+[ Set log_lexicon = 1 ]
+[ Answer question ]
+
+[ parsing question: ]
+WHAT>what DID>did JOHN>John EAT>eat AT>at LEONE'S>Leone's ?>? 
+| John ate _ _ what Leone's |
+
+[ into cue: ]
+| $restaurant $fancy John *steak(lobster)* Leone's good *from(small)* |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,0): ->(1,3):0.675 ->(7,7):0.945 ->(7,7):0.991 ->(7,7):0.991 ->(7,7):0.995 ->(7,7):0.994 ->(7,7):0.996 ->(7,7):0.995 ->(7,7):0.997 ]
+[ image units (0,0), (0,0), (7,7): ]
+| $restaurant $fancy John lobster Leone's good small |
+
+[ generating answer: ]
+| John ate _ good lobster _ |
+John>*Mary(John)*>JOHN ate>ate>ATE a>a>A good>good>GOOD lobster>lobster>LOBSTER .>.>. 
+
+[ Set log_lexicon = 0 ]
+[ ***** 11.4 Error Behavior ***** ]
+[ Stop command ignored ]
+[ Clearing networks ]
+[ Read and paraphrase story ]
+
+[ parsing input story: ]
+MARY WENT TO BUS-STOP . 
+| Mary went _ _ _ bus-stop |
+MARY WAITED FOR THE BUS . 
+| Mary waited _ _ bus _ |
+MARY PAID THE DRIVER . 
+| Mary paid driver _ _ _ |
+MARY GOT-OFF THE BUS . 
+| Mary got-off _ _ _ bus |
+
+[ into internal rep: ]
+| $travel $bus Mary bus-stop beach small _ |
+
+[ storing into episodic memory: ]
+[ image units (1,1), (0,0), (5,0): ]
+| $travel $bus Mary bus-stop beach small _ |
+
+[ generating paraphrase: ]
+| Mary went _ _ _ bus-stop |
+MARY WENT TO BUS-STOP . 
+| Mary waited _ _ bus _ |
+MARY WAITED FOR THE BUS . 
+| Mary got-on _ beach _ bus |
+MARY GOT-ON THE BEACH BUS . 
+| Mary paid driver _ _ _ |
+MARY PAID THE DRIVER . 
+| bus arrived _ _ _ beach |
+THE BUS ARRIVED AT BEACH . 
+| Mary got-off _ _ _ bus |
+MARY GOT-OFF THE BUS . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHERE DID MARY TAKE A BUS TO ? 
+| Mary took _ _ bus where |
+
+[ into cue: ]
+| $travel $bus Mary *bus-termin(bus-stop)* beach small _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,1), (0,0): ->(7,1):0.670 ->(5,0):0.900 ->(5,0):0.979 ->(5,0):0.975 ->(5,0):0.989 ->(5,0):0.983 ->(5,0):0.991 ->(5,0):0.986 ->(5,0):0.992 ]
+[ image units (1,1), (0,0), (5,0): ]
+| $travel $bus Mary bus-stop beach small _ |
+
+[ generating answer: ]
+| Mary took _ _ bus beach |
+MARY TOOK A BUS TO BEACH . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+DID MARY TRAVEL BIG DISTANCE TO DOWNTOWN ? 
+| Mary traveled _ big distance *downtown(beach)* |
+
+[ into cue: ]
+| $travel $bus Mary *bus-termin(bus-stop)* *downtown(beach)* small _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,1), (0,0): ->(3,1):0.689 ->(5,0):0.868 ->(5,0):0.971 ->(5,0):0.967 ->(5,0):0.984 ->(5,0):0.977 ->(5,0):0.988 ->(5,0):0.981 ->(5,0):0.989 ]
+[ image units (1,1), (0,0), (5,0): ]
+| $travel $bus Mary bus-stop beach small _ |
+
+[ generating answer: ]
+| Mary traveled _ small distance _ |
+MARY TRAVELED A SMALL DISTANCE . 
+
+[ Stop command ignored ]
+[ Read and paraphrase story ]
+
+[ parsing input story: ]
+JOHN WENT TO RALPH'S . 
+| John went _ _ _ Ralph's |
+JOHN COMPARED VEGETABLES PRICES . 
+| John compared _ vegetables prices _ |
+JOHN TOOK SEVERAL VEGETABLES . 
+| John took _ several vegetables _ |
+
+[ into internal rep: ]
+| $shopping $grocery John vegetables Ralph's _ _ |
+
+[ storing into episodic memory: ]
+[ image units (1,0), (0,1), (6,0): ]
+| $shopping $grocery John vegetables *Safeway(Ralph's)* _ _ |
+
+[ generating paraphrase: ]
+| John went _ _ _ *Safeway(Ralph's)* |
+JOHN WENT TO *SAFEWAY(RALPH'S)* . 
+| John took _ big cart _ |
+JOHN TOOK A BIG CART . 
+| John compared _ vegetables prices _ |
+JOHN COMPARED VEGETABLES PRICES . 
+| John took _ several vegetables _ |
+JOHN TOOK SEVERAL VEGETABLES . 
+| John waited _ big _ line |
+JOHN WAITED IN A BIG LINE . 
+| John paid cashier _ _ _ |
+JOHN PAID THE CASHIER . 
+| John left _ _ _ *Safeway(Ralph's)* |
+JOHN LEFT *SAFEWAY(RALPH'S)* . 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHERE DID JOHN BUY VEGETABLES ? 
+| John bought _ _ vegetables where |
+
+[ into cue: ]
+| $shopping $grocery John vegetables Ralph's _ _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,0), (0,1): ->(5,5):0.670 ->(6,0):0.956 ->(6,0):0.992 ->(6,0):0.992 ->(6,0):0.996 ->(6,0):0.995 ->(6,0):0.997 ->(6,0):0.996 ->(6,0):0.997 ]
+[ image units (1,0), (0,1), (6,0): ]
+| $shopping $grocery John vegetables *Safeway(Ralph's)* _ _ |
+
+[ generating answer: ]
+| John bought _ _ vegetables *Safeway(Ralph's)* |
+JOHN BOUGHT VEGETABLES AT RALPH'S . 
+
+[ Stop command ignored ]
+[ Set log_lexicon = 1 ]
+[ Read and paraphrase story ]
+
+[ parsing input story: ]
+MARY>Mary WENT>went TO>to BURGERKING>BurgerKing .>. 
+| Mary went _ _ _ BurgerKing |
+MARY>Mary ASKED>asked THE>the CASHIER>cashier FOR>for FRIES>fries .>. 
+| Mary asked cashier _ fries _ |
+MARY>Mary ATE>ate A>a SMALL>small FRIES>fries .>. 
+| Mary ate _ small fries _ |
+
+[ into internal rep: ]
+| $restaurant $fast Mary fries BurgerKing bad none |
+
+[ storing into episodic memory: ]
+[ image units (0,0), (0,1), (3,3): ]
+| $restaurant $fast Mary fries BurgerKing bad none |
+
+[ generating paraphrase: ]
+| Mary went _ _ _ BurgerKing |
+Mary>Mary>MARY went>went>WENT to>to>TO BurgerKing>BurgerKing>BURGERKING .>.>. 
+| Mary asked cashier _ fries _ |
+Mary>Mary>MARY asked>asked>ASKED the>the>THE cashier>cashier>CASHIER for>for>FOR *hamburger(fries)*>fries>*HAMBURGER(FRIES)* .>.>. 
+| Mary paid cashier _ _ _ |
+Mary>Mary>MARY paid>paid>PAID the>the>THE cashier>cashier>CASHIER .>.>. 
+| Mary seated _ _ Mary _ |
+Mary>Mary>MARY seated>seated>SEATED Mary>Mary>MARY .>.>. 
+| Mary ate _ small fries _ |
+Mary>Mary>MARY ate>ate>ATE a>a>A small>small>SMALL fries>fries>FRIES .>.>. 
+| Mary tasted _ bad fries _ |
+the>the>THE fries>fries>FRIES tasted>tasted>TASTED bad>bad>BAD .>.>. 
+| Mary left _ _ _ BurgerKing |
+Mary>Mary>MARY left>left>LEFT BurgerKing>BurgerKing>BURGERKING .>.>. 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHAT>what DID>did MARY>Mary EAT>eat AT>at BURGERKING>BurgerKing ?>? 
+| Mary ate _ _ what BurgerKing |
+
+[ into cue: ]
+| $restaurant $fast Mary *hamburger(fries)* BurgerKing bad none |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,1): ->(3,3):0.682 ->(3,3):0.950 ->(3,3):0.991 ->(3,3):0.990 ->(3,3):0.995 ->(3,3):0.994 ->(3,3):0.996 ->(3,3):0.995 ->(3,3):0.997 ]
+[ image units (0,0), (0,1), (3,3): ]
+| $restaurant $fast Mary fries BurgerKing bad none |
+
+[ generating answer: ]
+| Mary ate _ small fries _ |
+Mary>Mary>MARY ate>ate>ATE a>a>A small>small>SMALL *hamburger(fries)*>fries>*HAMBURGER(FRIES)* .>.>. 
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHERE>where DID>did MARY>Mary EAT>eat FRIES>fries ?>? 
+| Mary ate _ _ fries where |
+
+[ into cue: ]
+| $restaurant $fast Mary fries *McDonald's(BurgerKing)* bad none |
+
+[ retrieving from episodic memory: ]
+[ map (0,0), (0,1): ->(4,1):0.688 ->(3,3):0.924 ->(3,3):0.985 ->(3,3):0.983 ->(3,3):0.992 ->(3,3):0.988 ->(3,3):0.993 ->(3,3):0.990 ->(3,3):0.994 ]
+[ image units (0,0), (0,1), (3,3): ]
+| $restaurant $fast Mary fries BurgerKing bad none |
+
+[ generating answer: ]
+| Mary ate _ _ fries BurgerKing |
+Mary>Mary>MARY ate>ate>ATE fries>fries>FRIES at>at>AT BurgerKing>BurgerKing>BURGERKING .>.>. 
+
+[ Stop command ignored ]
+[ Read and paraphrase story ]
+
+[ parsing input story: ]
+JOHN>John WENT>went TO>to BROADWAY>Broadway .>. 
+| John went _ _ _ Broadway |
+JOHN>John LOOKED>looked FOR>for GOOD>good SHOES>shoes .>. 
+| John looked _ good shoes _ |
+JOHN>John TOOK>took THE>the BEST>best SHOES>shoes .>. 
+| John took _ best shoes _ |
+
+[ into internal rep: ]
+| $shopping $clothing John shoes Broadway _ _ |
+
+[ storing into episodic memory: ]
+[ image units (1,0), (0,0), (1,5): ]
+| $shopping $clothing John shoes Broadway _ _ |
+
+[ generating paraphrase: ]
+| John went _ _ _ Broadway |
+John>John>JOHN went>went>WENT to>to>TO Broadway>Broadway>*BULLOCK'S(BROADWAY)* .>.>. 
+| John looked _ good shoes _ |
+John>John>JOHN looked>looked>LOOKED for>for>FOR good>good>GOOD shoes>shoes>SHOES .>.>. 
+| John tried John several shoes _ |
+John>John>JOHN tried>tried>TRIED on>on>ON several>several>SEVERAL shoes>shoes>SHOES .>.>. 
+| John took _ best shoes _ |
+John>John>JOHN took>took>TOOK the>the>THE best>best>BEST shoes>shoes>SHOES .>.>. 
+| John paid cashier _ _ _ |
+John>John>JOHN paid>paid>PAID the>the>THE cashier>cashier>CASHIER .>.>. 
+| John left _ _ _ Broadway |
+John>John>JOHN left>left>LEFT Broadway>Broadway>BROADWAY .>.>. 
+
+[ Set log_lexicon = 0 ]
+[ Clearing networks ]
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+MARY WENT TO BULLOCK'S . 
+| Mary went _ _ _ Bullock's |
+MARY LOOKED FOR GOOD JEANS . 
+| Mary looked _ good jeans _ |
+MARY TOOK THE BEST JEANS . 
+| Mary took _ best jeans _ |
+
+[ into internal rep: ]
+| $shopping $clothing Mary jeans Bullock's _ _ |
+
+[ storing into episodic memory: ]
+[ image units (1,0), (0,0), (1,0): ]
+| $shopping $clothing Mary jeans Bullock's _ _ |
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHAT DID MARY BUY AT BULLOCK'S ? 
+| Mary bought _ _ what Bullock's |
+
+[ into cue: ]
+| $shopping $clothing Mary *shoes(jeans)* Bullock's _ _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,0), (0,0): ->(3,7):0.677 ->(1,0):0.625 ->(1,0):0.880 ->(1,0):0.776 ->(1,0):0.912 ->(1,0):0.808 ->(1,0):0.920 ->(1,0):0.820 ->(1,0):0.923 ]
+[ image units (1,0), (0,0), (1,0): ]
+| $shopping $clothing Mary jeans Bullock's _ _ |
+
+[ generating answer: ]
+| Mary bought _ _ jeans _ |
+MARY BOUGHT JEANS . 
+
+[ Stop command ignored ]
+[ Read story ]
+
+[ parsing input story: ]
+MARY WENT TO BROADWAY . 
+| Mary went _ _ _ Broadway |
+MARY LOOKED FOR GOOD JEANS . 
+| Mary looked _ good jeans _ |
+MARY TOOK THE BEST JEANS . 
+| Mary took _ best jeans _ |
+
+[ into internal rep: ]
+| $shopping $clothing Mary jeans Broadway _ _ |
+
+[ storing into episodic memory: ]
+[ image units (1,0), (0,0), (3,0): ]
+| $shopping $clothing Mary jeans Broadway _ _ |
+
+[ Stop command ignored ]
+[ Answer question ]
+
+[ parsing question: ]
+WHAT DID MARY BUY AT BULLOCK'S ? 
+| Mary bought _ _ what Bullock's |
+
+[ into cue: ]
+| $shopping $clothing Mary *shoes(jeans)* Bullock's _ _ |
+
+[ retrieving from episodic memory: ]
+[ map (1,0), (0,0): ->(3,7):0.677 ->(1,0):0.858 ->(3,0):0.958 ->(3,0):0.943 ->(3,0):0.973 ->(3,0):0.956 ->(3,0):0.977 ->(3,0):0.963 ->(3,0):0.979 ]
+[ image units (1,0), (0,0), (3,0): ]
+| $shopping $clothing Mary jeans *Broadway(Bullock's)* _ _ |
+
+[ generating answer: ]
+| Mary bought _ _ jeans _ |
+MARY BOUGHT JEANS . 
+
+
+Paraphrasing performance:
+Module       All    Inst  <0.15    AvgErr
+Module  0:   99.7   99.0   99.7    0.0119
+Module  1:   97.3   95.8   96.4    0.0255
+Module  2:   96.4   97.4   96.6    0.0257
+Module  3:   95.1   95.9   96.3    0.0381
+Module  4:    0.0    0.0    0.0    0.0000
+Module  5:    0.0    0.0    0.0    0.0000
+Module  6:   97.3   95.8   97.8    0.0089
+Module  7:    0.0    0.0    0.0    0.0000
+Module  8:  100.0  100.0  100.0    0.0000
+Module  9:  100.0  100.0  100.0    0.0002
+Module 10:   94.7   95.9   96.4    0.0160
+Module 11:   94.7   94.6   98.0    0.0100
+
+Question answering performance:
+Module       All    Inst  <0.15    AvgErr
+Module  0:   96.5   89.8   98.1    0.0215
+Module  1:    0.0    0.0    0.0    0.0000
+Module  2:    0.0    0.0    0.0    0.0000
+Module  3:   98.5   95.7   98.0    0.0313
+Module  4:   82.7   75.0   90.9    0.0433
+Module  5:   99.3   97.9   98.7    0.0156
+Module  6:    0.0    0.0    0.0    0.0000
+Module  7:   98.1   97.1   98.1    0.0080
+Module  8:  100.0  100.0  100.0    0.0000
+Module  9:  100.0  100.0  100.0    0.0002
+Module 10:   97.7   95.7   98.6    0.0051
+Module 11:   99.2   97.9   99.5    0.0034
+[ Finished reading input from input-example. ]
+DISCERN> 

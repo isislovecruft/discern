@@ -1,0 +1,93 @@
+!
+! Discern.ad --- the app-defaults file for DISCERN.
+!
+! Each resource is described below, the default value (the one used if
+! the resource is not specified in this file) is given, and where
+! applicable, the command line options that override the app-defaults 
+! value are listed.
+!
+! $Id: Discern.ad,v 1.11 1994/09/18 09:04:43 risto Exp $
+!
+! General display settings
+! ------------------------
+! Discern*bringupDisplay:true	Whether to bring up the graphics display
+! -graphics -nographics		or run DISCERN in terminal mode.
+! Discern*owncmap: 	false	Whether to allocate colors using a private
+! -owncmap -noowncmap		colormap (useful when colors need to be exact).
+! Discern*delay:	0	Number of seconds each major propagation 
+!  -delay <sec>			display is delayed (useful when the display
+!				is really fast). Must be an integer.
+! Dimensions
+! ----------
+! Discern*netwidth:	512	Width of the network displays in pixels.
+! Discern*procnetheight:140	Heights of the processing network displays.
+! Discern*hfmnetheight:	514	Height of the episodic memory network display.
+! Discern*lexnetheight:	255	Heights of the lexical feature map displays.
+!
+! Trace map display params
+! ------------------------
+! Discern*tracelinescale:1.5	Lateral weight line length scaling factor.
+! Discern*tracewidthscale:0.01	Scaling for latweight line thickness.
+! Discern*reversevalue:	0.3	Reverse the labelcolor if higher activation.
+!
+! Colors
+! ------
+! Discern*foreground:	yellow	Display foreground (for the buttons),
+! Discern*background:	black	background (everywhere), and
+! Discern*borderColor:	Goldenrod border colors.
+! Discern*textColor:	green	All text on the displays is in this color.
+! Discern*netColor:	red	The network assembly outline color.
+! Discern*latweightColor:white	Color of lateral weights in trace map.
+!
+! Fonts
+! -----
+! Discern*commandfont:	7x13bold Text on the buttons on top of the display.
+! Discern*titlefont:	8x13bold Font for the titles of the networks.
+! Discern*logfont:	6x10	 Log line (current error etc.)
+! Discern*asmfont:	6x10	 Labels on the assemblies.
+! Discern*asmerrorfont:	5x8	 Label on an erroneous pattern in an assembly.
+! Discern*hfmfont:	7x13	 Labels on top and middle levels of epis. mem.
+! Discern*tracefont:	5x8	 Labels on the bottom level.
+! Discern*lexfont:	5x8	 Labels on the lexical map.
+! Discern*semfont:	5x8	 Labels on the semantic map.
+!
+! Keystroke translations
+! ----------------------
+! Discern*command.translations: #override\n\
+! <Key>Return: read_command()	 Return press causes reading command window.
+!
+!
+! The actual definitions begin here.
+!
+Discern*bringupDisplay:	true
+Discern*owncmap:	false
+Discern*delay:		0
+!
+Discern*netwidth:	512
+Discern*procnetheight:	140
+Discern*hfmnetheight:	514
+Discern*lexnetheight:	255
+!
+Discern*tracelinescale:	1.5
+Discern*tracewidthscale:0.01
+Discern*reversevalue:	0.3
+!
+Discern*foreground:	yellow
+Discern*background:	black
+Discern*borderColor:	Goldenrod
+Discern*textColor:	green
+Discern*netColor:	red
+Discern*latweightColor:	white
+!
+Discern*commandfont:	7x13bold
+Discern*titlefont:	8x13bold
+Discern*logfont:	6x10
+Discern*asmfont:	6x10
+Discern*asmerrorfont:	5x8
+Discern*hfmfont:	7x13
+Discern*tracefont:	5x8
+Discern*lexfont:	5x8
+Discern*semfont:	5x8
+!
+Discern*command.translations: #override\n\
+	<Key>Return: read_command()

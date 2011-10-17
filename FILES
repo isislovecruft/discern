@@ -1,0 +1,186 @@
+The DISCERN software package
+============================
+
+The software in this directory constitutes the DISCERN system in the
+performance configuration. The components of DISCERN (the processing
+modules, lexicon, and episodic memory) have been trained separately with
+PROC, DISLEX, and HFM, and in this directory they are brought together
+into a single system that reads and paraphrases script-based stories and
+answers questions about them. The software consists of three main
+components: (1) the code for the simulation management, networks, and
+graphics, (2) the configuration files (weights and parameters), (3) the
+input command and story files.  This file contains an overview of all of
+these. For more detailed explanations, see the comments in the
+individual files.
+
+
+Code
+----
+defs.h
+
+Definitions of the global data types and constants. The network weights
+and activities and the input data are stored in fixed-size tables whose
+max dimensions are hardcoded as compiler constants. If you design your
+own data and accidentally exceed the max table sizes DISCERN should be
+able to catch it and give a warning (and you can then change the table
+limits in this file to fit your data).
+
+prototypes.h
+Prototype definitions for global functions.
+
+globals.c
+The global variables including network dimensions, weights, and activities,
+input data, file names, simulation parameters and major graphics structures
+are defined here.
+
+gwin.c, Gwin.h, GwinP.h
+Defines a simple window widget for graphics output.
+
+main.c
+Includes the main command loop and processing of simple commands,
+initialization of the X interface, networks, and input data, and general
+feature map search and comparison routines.; All the input stories are
+given as text; However, when the input is read in, it is converted into
+index representation where every word is represented by an index to a
+table of representations.
+
+proc.c
+Simulation code for the six FGREP (backpropagation) networks: the
+sentence-parser, story-parser, story-generator, sentence-generator,
+cue-former, and answer producer. There are routines for initialization
+of these networks and propagation through them.
+
+lex.c
+Simulation code for the lexicon. Initialization and clearing the
+activation, translating from lexical representations to semantic,
+translating from semantic to lexical (i.e. presenting input to the
+input feature map, finding the 4 most active units, propagating through
+the associative connections of these units to the output map, finding
+the most active unit in the output map.).
+
+hfm.c
+Simulation code for storing story representations in the episodic memory
+and retrieving them (i.e. finding a location in the hierarchy of feature
+maps and then calling trace.c to create and retrieve the actual trace).
+
+trace.c
+Creating a trace in the given bottom-level feature map of the
+episodic memory by changing the lateral connections in this map.
+Retrieving a trace by presenting an input to the given bottom-level
+feature map and propagating activation through the lateral connections
+until it settles, finding the maximally responding unit.
+
+graph.c
+X window graphics: initialization, event handling loop, callbacks for
+simulation control buttons, colormap allocation, displaying network
+activities, resizing.
+
+stats.c
+Statistics initialization, collecting and printing routines.
+
+
+Configuration files
+-------------------
+init
+This is actually an input command file, but it is the first file DISCERN
+reads in and it sets up rest of DISCERN, so it deserves to be discussed
+here.  By default DISCERN looks for file "init" but it can be specified
+as the first command line parameter for DISCERN (e.g. "discern
+my-init-file"). Init must specify at the very least the sizes of the
+case-role and story representations and the names of the other
+configuration files. It is also a good place to define which modules are
+actually included in the simulation, how much log output is generated,
+and give parameters for episodic memory and trace feature maps.
+
+lreps
+Contains the labels and the representations for the lexical words that
+DISCERN uses to communicate with the outside world. The representations
+stand for "blurred bitmaps", i.e. they were obtained by counting the
+dark pixels in each letter in the MacIntosh Geneva font, and scaling and
+concatenating the values for the letters of each word. The order of words
+should match those in the sreps file because that is how DISCERN knows
+which semantic word matches which lexical word.
+
+sreps
+Contains the labels and the representations for the semantic words (the
+representations for the word meanings that DISCERN uses internally).  A
+number of words are specified as instances so that separate statistics
+can be collected for them (note that the instance representations are
+given explicitly in this file and not generated on the fly like with
+PROC). The order of words should match those in the lreps
+file. Additional words can be specified at the end of the file as
+internal symbols; they will not have lexical counterparts and they will
+not be displayed on the semantic map.
+
+procsimu
+This is the simulation file generated by the PROC program, which trains
+the six FGREP modules and develops the semantic representations.  The
+file consists of a number of simulation parameters for PROC, followed by
+one or more snapshots of the simulation. DISCERN reads in the file as it
+is, even though it does not need all of it. DISCERN gets the hidden
+layer sizes and network weights from this file and ignores everything
+else. Note that DISCERN ignores also the word representations that are
+part of the snapshot. They are read from the sreps file instead; sreps
+is basically the same set of representations with instances generated
+from the prototype words.
+
+hfmsimu
+The simulation file generated by the HFM program that trains the
+hierarchical system of feature maps to form a taxonomy of script-based
+stories (which constitutes the organization for the episodic memory).
+Again, the file consists of a number of simulation parameters for HFM
+and one or more snapshots. DISCERN gets the map size parameters, the
+map weights, and the compression indices from this file and ignores
+everything else.
+
+hfminp
+An input file for the HFM program that was used to test the hierarchical
+feature map organization. DISCERN uses this file to set up labels for
+the episodic memory display. That is, this file is read in during the
+graphics initialization: the story representations are formed using the
+representations from the srep file, presented to the episodic memory,
+and the image units are labeled according to the labels of the
+representations.
+
+lexsimu
+The simulation file generated by the LEX program, which trains the
+lexical and semantic feature maps of the lexicon and the associative
+connections between them. The file consists of a number of simulation
+parameters for LEX, and one or more snapshots. DISCERN gets the
+feature map size parameters and the weights from this file and ignores
+everything else.
+
+Discern.ad
+This is the X application default file. It defines a number of
+parameters for the X display such as the graphics dimensions, colors and
+fonts. This file should be placed in the app-defaults directory or
+user's home directory (in which case it should be renamed "Discern") or
+included in the user's .Xdefaults file.
+
+
+Input command and story files
+-----------------------------
+init
+The main initialization file for DISCERN. See above under "Configuration
+files". It is also possible to define the entire simulation run
+in this file and just run it with "discern &".
+
+input-example
+This input file specifies the example run that is explained in detail in
+Ch. 11 of the "Subsymbolic Natural Language Processing" book. The file
+output-example has the output and can be used to compare the output of
+future versions of DISCERN (as a debugging check; the outputs should be
+the same).
+
+input-all-complete
+The complete set of complete stories used to test DISCERN.
+
+input-all-incomplete
+The complete set of incomplete stories used to test DISCERN.
+
+input-test-all
+Runs the performance tests listed in Ch. 11. It recursively calls
+input-all-complete and input-all-incomplete. This is an example of
+specifying the whole simulation experiment in one file. The file
+output-test-all was generated with "discern <input-test-all".
+

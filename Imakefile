@@ -1,0 +1,11 @@
+
+        DEPLIBS = XawClientDepLibs
+LOCAL_LIBRARIES = XawClientLibs
+  SYS_LIBRARIES = -lm
+           SRCS = globals.c main.c proc.c hfm.c trace.c lex.c \
+		  stats.c graph.c gwin.c
+           OBJS = main.o proc.o hfm.o trace.o lex.o stats.o graph.o gwin.o
+
+ComplexProgramTarget(discern)
+InstallAppDefaults(Discern)
+

@@ -1,0 +1,2836 @@
+echo ***** Complete set of complete stories *****
+#
+# first make sure the parameters are right
+withlex 1
+withhfm 1
+babbling 0
+print_mistakes 1
+log_lexicon 0
+topsearch 3.0
+midsearch 3.0
+tracenc 2
+tsettle 10
+epsilon 0.0001
+aliveact 0.5
+minact 0.5
+maxact 2.0
+gammaexc 0.5
+gammainh -0.1
+withinerr 0.15
+init-stats
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John lobster MaMaison good big 
+1 John went to MaMaison . John went _ _ _ MaMaison 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for lobster . John asked waiter _ lobster _ 
+1 John ate a good lobster . John ate _ good lobster _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John left MaMaison . John left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy John lobster MaMaison good big 
+who ate lobster at MaMaison ? who ate _ _ lobster MaMaison 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John lobster MaMaison good big 
+what did John eat at MaMaison ? John ate _ _ what MaMaison 
+John ate a good lobster . John ate _ good lobster _ 
+stop
+question
+$restaurant $fancy John lobster MaMaison good big 
+where did John eat lobster ? John ate _ _ lobster where 
+John ate lobster at MaMaison . John ate _ _ lobster MaMaison 
+stop
+question
+$restaurant $fancy John lobster MaMaison good big 
+how did John like lobster at MaMaison ? John thought _ what lobster MaMaison 
+John thought lobster was good at MaMaison . John thought _ good lobster MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John lobster Leone's good big 
+1 John went to Leone's . John went _ _ _ Leone's 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for lobster . John asked waiter _ lobster _ 
+1 John ate a good lobster . John ate _ good lobster _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John left Leone's . John left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy John lobster Leone's good big 
+who ate lobster at Leone's ? who ate _ _ lobster Leone's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John lobster Leone's good big 
+what did John eat at Leone's ? John ate _ _ what Leone's 
+John ate a good lobster . John ate _ good lobster _ 
+stop
+question
+$restaurant $fancy John lobster Leone's good big 
+where did John eat lobster ? John ate _ _ lobster where 
+John ate lobster at Leone's . John ate _ _ lobster Leone's 
+stop
+question
+$restaurant $fancy John lobster Leone's good big 
+how did John like lobster at Leone's ? John thought _ what lobster Leone's 
+John thought lobster was good at Leone's . John thought _ good lobster Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John steak MaMaison good big 
+1 John went to MaMaison . John went _ _ _ MaMaison 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for steak . John asked waiter _ steak _ 
+1 John ate a good steak . John ate _ good steak _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John left MaMaison . John left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy John steak MaMaison good big 
+who ate steak at MaMaison ? who ate _ _ steak MaMaison 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John steak MaMaison good big 
+what did John eat at MaMaison ? John ate _ _ what MaMaison 
+John ate a good steak . John ate _ good steak _ 
+stop
+question
+$restaurant $fancy John steak MaMaison good big 
+where did John eat steak ? John ate _ _ steak where 
+John ate steak at MaMaison . John ate _ _ steak MaMaison 
+stop
+question
+$restaurant $fancy John steak MaMaison good big 
+how did John like steak at MaMaison ? John thought _ what steak MaMaison 
+John thought steak was good at MaMaison . John thought _ good steak MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John steak Leone's good big 
+1 John went to Leone's . John went _ _ _ Leone's 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for steak . John asked waiter _ steak _ 
+1 John ate a good steak . John ate _ good steak _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John left Leone's . John left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy John steak Leone's good big 
+who ate steak at Leone's ? who ate _ _ steak Leone's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John steak Leone's good big 
+what did John eat at Leone's ? John ate _ _ what Leone's 
+John ate a good steak . John ate _ good steak _ 
+stop
+question
+$restaurant $fancy John steak Leone's good big 
+where did John eat steak ? John ate _ _ steak where 
+John ate steak at Leone's . John ate _ _ steak Leone's 
+stop
+question
+$restaurant $fancy John steak Leone's good big 
+how did John like steak at Leone's ? John thought _ what steak Leone's 
+John thought steak was good at Leone's . John thought _ good steak Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary lobster MaMaison good big 
+1 Mary went to MaMaison . Mary went _ _ _ MaMaison 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for lobster . Mary asked waiter _ lobster _ 
+1 Mary ate a good lobster . Mary ate _ good lobster _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary left MaMaison . Mary left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good big 
+who ate lobster at MaMaison ? who ate _ _ lobster MaMaison 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good big 
+what did Mary eat at MaMaison ? Mary ate _ _ what MaMaison 
+Mary ate a good lobster . Mary ate _ good lobster _ 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good big 
+where did Mary eat lobster ? Mary ate _ _ lobster where 
+Mary ate lobster at MaMaison . Mary ate _ _ lobster MaMaison 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good big 
+how did Mary like lobster at MaMaison ? Mary thought _ what lobster MaMaison 
+Mary thought lobster was good at MaMaison . Mary thought _ good lobster MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary lobster Leone's good big 
+1 Mary went to Leone's . Mary went _ _ _ Leone's 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for lobster . Mary asked waiter _ lobster _ 
+1 Mary ate a good lobster . Mary ate _ good lobster _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary left Leone's . Mary left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good big 
+who ate lobster at Leone's ? who ate _ _ lobster Leone's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good big 
+what did Mary eat at Leone's ? Mary ate _ _ what Leone's 
+Mary ate a good lobster . Mary ate _ good lobster _ 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good big 
+where did Mary eat lobster ? Mary ate _ _ lobster where 
+Mary ate lobster at Leone's . Mary ate _ _ lobster Leone's 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good big 
+how did Mary like lobster at Leone's ? Mary thought _ what lobster Leone's 
+Mary thought lobster was good at Leone's . Mary thought _ good lobster Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary steak MaMaison good big 
+1 Mary went to MaMaison . Mary went _ _ _ MaMaison 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for steak . Mary asked waiter _ steak _ 
+1 Mary ate a good steak . Mary ate _ good steak _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary left MaMaison . Mary left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good big 
+who ate steak at MaMaison ? who ate _ _ steak MaMaison 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good big 
+what did Mary eat at MaMaison ? Mary ate _ _ what MaMaison 
+Mary ate a good steak . Mary ate _ good steak _ 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good big 
+where did Mary eat steak ? Mary ate _ _ steak where 
+Mary ate steak at MaMaison . Mary ate _ _ steak MaMaison 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good big 
+how did Mary like steak at MaMaison ? Mary thought _ what steak MaMaison 
+Mary thought steak was good at MaMaison . Mary thought _ good steak MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary steak Leone's good big 
+1 Mary went to Leone's . Mary went _ _ _ Leone's 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for steak . Mary asked waiter _ steak _ 
+1 Mary ate a good steak . Mary ate _ good steak _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary left Leone's . Mary left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+who ate steak at Leone's ? who ate _ _ steak Leone's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+what did Mary eat at Leone's ? Mary ate _ _ what Leone's 
+Mary ate a good steak . Mary ate _ good steak _ 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+where did Mary eat steak ? Mary ate _ _ steak where 
+Mary ate steak at Leone's . Mary ate _ _ steak Leone's 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+how did Mary like steak at Leone's ? Mary thought _ what steak Leone's 
+Mary thought steak was good at Leone's . Mary thought _ good steak Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John lobster MaMaison good small 
+1 John went to MaMaison . John went _ _ _ MaMaison 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for lobster . John asked waiter _ lobster _ 
+1 John ate a good lobster . John ate _ good lobster _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John left MaMaison . John left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy John lobster MaMaison good small 
+who ate lobster at MaMaison ? who ate _ _ lobster MaMaison 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John lobster MaMaison good small 
+what did John eat at MaMaison ? John ate _ _ what MaMaison 
+John ate a good lobster . John ate _ good lobster _ 
+stop
+question
+$restaurant $fancy John lobster MaMaison good small 
+where did John eat lobster ? John ate _ _ lobster where 
+John ate lobster at MaMaison . John ate _ _ lobster MaMaison 
+stop
+question
+$restaurant $fancy John lobster MaMaison good small 
+how did John like lobster at MaMaison ? John thought _ what lobster MaMaison 
+John thought lobster was good at MaMaison . John thought _ good lobster MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John lobster Leone's good small 
+1 John went to Leone's . John went _ _ _ Leone's 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for lobster . John asked waiter _ lobster _ 
+1 John ate a good lobster . John ate _ good lobster _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John left Leone's . John left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy John lobster Leone's good small 
+who ate lobster at Leone's ? who ate _ _ lobster Leone's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John lobster Leone's good small 
+what did John eat at Leone's ? John ate _ _ what Leone's 
+John ate a good lobster . John ate _ good lobster _ 
+stop
+question
+$restaurant $fancy John lobster Leone's good small 
+where did John eat lobster ? John ate _ _ lobster where 
+John ate lobster at Leone's . John ate _ _ lobster Leone's 
+stop
+question
+$restaurant $fancy John lobster Leone's good small 
+how did John like lobster at Leone's ? John thought _ what lobster Leone's 
+John thought lobster was good at Leone's . John thought _ good lobster Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John steak MaMaison good small 
+1 John went to MaMaison . John went _ _ _ MaMaison 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for steak . John asked waiter _ steak _ 
+1 John ate a good steak . John ate _ good steak _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John left MaMaison . John left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy John steak MaMaison good small 
+who ate steak at MaMaison ? who ate _ _ steak MaMaison 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John steak MaMaison good small 
+what did John eat at MaMaison ? John ate _ _ what MaMaison 
+John ate a good steak . John ate _ good steak _ 
+stop
+question
+$restaurant $fancy John steak MaMaison good small 
+where did John eat steak ? John ate _ _ steak where 
+John ate steak at MaMaison . John ate _ _ steak MaMaison 
+stop
+question
+$restaurant $fancy John steak MaMaison good small 
+how did John like steak at MaMaison ? John thought _ what steak MaMaison 
+John thought steak was good at MaMaison . John thought _ good steak MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy John steak Leone's good small 
+1 John went to Leone's . John went _ _ _ Leone's 
+1 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for steak . John asked waiter _ steak _ 
+1 John ate a good steak . John ate _ good steak _ 
+1 John paid the waiter . John paid waiter _ _ _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John left Leone's . John left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy John steak Leone's good small 
+who ate steak at Leone's ? who ate _ _ steak Leone's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy John steak Leone's good small 
+what did John eat at Leone's ? John ate _ _ what Leone's 
+John ate a good steak . John ate _ good steak _ 
+stop
+question
+$restaurant $fancy John steak Leone's good small 
+where did John eat steak ? John ate _ _ steak where 
+John ate steak at Leone's . John ate _ _ steak Leone's 
+stop
+question
+$restaurant $fancy John steak Leone's good small 
+how did John like steak at Leone's ? John thought _ what steak Leone's 
+John thought steak was good at Leone's . John thought _ good steak Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary lobster MaMaison good small 
+1 Mary went to MaMaison . Mary went _ _ _ MaMaison 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for lobster . Mary asked waiter _ lobster _ 
+1 Mary ate a good lobster . Mary ate _ good lobster _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary left MaMaison . Mary left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good small 
+who ate lobster at MaMaison ? who ate _ _ lobster MaMaison 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good small 
+what did Mary eat at MaMaison ? Mary ate _ _ what MaMaison 
+Mary ate a good lobster . Mary ate _ good lobster _ 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good small 
+where did Mary eat lobster ? Mary ate _ _ lobster where 
+Mary ate lobster at MaMaison . Mary ate _ _ lobster MaMaison 
+stop
+question
+$restaurant $fancy Mary lobster MaMaison good small 
+how did Mary like lobster at MaMaison ? Mary thought _ what lobster MaMaison 
+Mary thought lobster was good at MaMaison . Mary thought _ good lobster MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary lobster Leone's good small 
+1 Mary went to Leone's . Mary went _ _ _ Leone's 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for lobster . Mary asked waiter _ lobster _ 
+1 Mary ate a good lobster . Mary ate _ good lobster _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary left Leone's . Mary left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good small 
+who ate lobster at Leone's ? who ate _ _ lobster Leone's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good small 
+what did Mary eat at Leone's ? Mary ate _ _ what Leone's 
+Mary ate a good lobster . Mary ate _ good lobster _ 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good small 
+where did Mary eat lobster ? Mary ate _ _ lobster where 
+Mary ate lobster at Leone's . Mary ate _ _ lobster Leone's 
+stop
+question
+$restaurant $fancy Mary lobster Leone's good small 
+how did Mary like lobster at Leone's ? Mary thought _ what lobster Leone's 
+Mary thought lobster was good at Leone's . Mary thought _ good lobster Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary steak MaMaison good small 
+1 Mary went to MaMaison . Mary went _ _ _ MaMaison 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for steak . Mary asked waiter _ steak _ 
+1 Mary ate a good steak . Mary ate _ good steak _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary left MaMaison . Mary left _ _ _ MaMaison 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good small 
+who ate steak at MaMaison ? who ate _ _ steak MaMaison 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good small 
+what did Mary eat at MaMaison ? Mary ate _ _ what MaMaison 
+Mary ate a good steak . Mary ate _ good steak _ 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good small 
+where did Mary eat steak ? Mary ate _ _ steak where 
+Mary ate steak at MaMaison . Mary ate _ _ steak MaMaison 
+stop
+question
+$restaurant $fancy Mary steak MaMaison good small 
+how did Mary like steak at MaMaison ? Mary thought _ what steak MaMaison 
+Mary thought steak was good at MaMaison . Mary thought _ good steak MaMaison 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fancy Mary steak Leone's good small 
+1 Mary went to Leone's . Mary went _ _ _ Leone's 
+1 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for steak . Mary asked waiter _ steak _ 
+1 Mary ate a good steak . Mary ate _ good steak _ 
+1 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary left Leone's . Mary left _ _ _ Leone's 
+stop
+question
+$restaurant $fancy Mary steak Leone's good small 
+who ate steak at Leone's ? who ate _ _ steak Leone's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary steak Leone's good small 
+what did Mary eat at Leone's ? Mary ate _ _ what Leone's 
+Mary ate a good steak . Mary ate _ good steak _ 
+stop
+question
+$restaurant $fancy Mary steak Leone's good small 
+where did Mary eat steak ? Mary ate _ _ steak where 
+Mary ate steak at Leone's . Mary ate _ _ steak Leone's 
+stop
+question
+$restaurant $fancy Mary steak Leone's good small 
+how did Mary like steak at Leone's ? Mary thought _ what steak Leone's 
+Mary thought steak was good at Leone's . Mary thought _ good steak Leone's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John spaghetti Denny's good big 
+1 John went to Denny's . John went _ _ _ Denny's 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for spaghetti . John asked waiter _ spaghetti _ 
+1 John ate a good spaghetti . John ate _ good spaghetti _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Denny's . John left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee John spaghetti Denny's good big 
+who ate spaghetti at Denny's ? who ate _ _ spaghetti Denny's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John spaghetti Denny's good big 
+what did John eat at Denny's ? John ate _ _ what Denny's 
+John ate a good spaghetti . John ate _ good spaghetti _ 
+stop
+question
+$restaurant $coffee John spaghetti Denny's good big 
+where did John eat spaghetti ? John ate _ _ spaghetti where 
+John ate spaghetti at Denny's . John ate _ _ spaghetti Denny's 
+stop
+question
+$restaurant $coffee John spaghetti Denny's good big 
+how did John like spaghetti at Denny's ? John thought _ what spaghetti Denny's 
+John thought spaghetti was good at Denny's . John thought _ good spaghetti Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John spaghetti Norms good big 
+1 John went to Norms . John went _ _ _ Norms 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for spaghetti . John asked waiter _ spaghetti _ 
+1 John ate a good spaghetti . John ate _ good spaghetti _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Norms . John left _ _ _ Norms 
+stop
+question
+$restaurant $coffee John spaghetti Norms good big 
+who ate spaghetti at Norms ? who ate _ _ spaghetti Norms 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John spaghetti Norms good big 
+what did John eat at Norms ? John ate _ _ what Norms 
+John ate a good spaghetti . John ate _ good spaghetti _ 
+stop
+question
+$restaurant $coffee John spaghetti Norms good big 
+where did John eat spaghetti ? John ate _ _ spaghetti where 
+John ate spaghetti at Norms . John ate _ _ spaghetti Norms 
+stop
+question
+$restaurant $coffee John spaghetti Norms good big 
+how did John like spaghetti at Norms ? John thought _ what spaghetti Norms 
+John thought spaghetti was good at Norms . John thought _ good spaghetti Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John fish Denny's good big 
+1 John went to Denny's . John went _ _ _ Denny's 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for fish . John asked waiter _ fish _ 
+1 John ate a good fish . John ate _ good fish _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Denny's . John left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee John fish Denny's good big 
+who ate fish at Denny's ? who ate _ _ fish Denny's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John fish Denny's good big 
+what did John eat at Denny's ? John ate _ _ what Denny's 
+John ate a good fish . John ate _ good fish _ 
+stop
+question
+$restaurant $coffee John fish Denny's good big 
+where did John eat fish ? John ate _ _ fish where 
+John ate fish at Denny's . John ate _ _ fish Denny's 
+stop
+question
+$restaurant $coffee John fish Denny's good big 
+how did John like fish at Denny's ? John thought _ what fish Denny's 
+John thought fish was good at Denny's . John thought _ good fish Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John fish Norms good big 
+1 John went to Norms . John went _ _ _ Norms 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for fish . John asked waiter _ fish _ 
+1 John ate a good fish . John ate _ good fish _ 
+1 John left a big tip . John left waiter big tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Norms . John left _ _ _ Norms 
+stop
+question
+$restaurant $coffee John fish Norms good big 
+who ate fish at Norms ? who ate _ _ fish Norms 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John fish Norms good big 
+what did John eat at Norms ? John ate _ _ what Norms 
+John ate a good fish . John ate _ good fish _ 
+stop
+question
+$restaurant $coffee John fish Norms good big 
+where did John eat fish ? John ate _ _ fish where 
+John ate fish at Norms . John ate _ _ fish Norms 
+stop
+question
+$restaurant $coffee John fish Norms good big 
+how did John like fish at Norms ? John thought _ what fish Norms 
+John thought fish was good at Norms . John thought _ good fish Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary spaghetti Denny's good big 
+1 Mary went to Denny's . Mary went _ _ _ Denny's 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for spaghetti . Mary asked waiter _ spaghetti _ 
+1 Mary ate a good spaghetti . Mary ate _ good spaghetti _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Denny's . Mary left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's good big 
+who ate spaghetti at Denny's ? who ate _ _ spaghetti Denny's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's good big 
+what did Mary eat at Denny's ? Mary ate _ _ what Denny's 
+Mary ate a good spaghetti . Mary ate _ good spaghetti _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's good big 
+where did Mary eat spaghetti ? Mary ate _ _ spaghetti where 
+Mary ate spaghetti at Denny's . Mary ate _ _ spaghetti Denny's 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's good big 
+how did Mary like spaghetti at Denny's ? Mary thought _ what spaghetti Denny's 
+Mary thought spaghetti was good at Denny's . Mary thought _ good spaghetti Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary spaghetti Norms good big 
+1 Mary went to Norms . Mary went _ _ _ Norms 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for spaghetti . Mary asked waiter _ spaghetti _ 
+1 Mary ate a good spaghetti . Mary ate _ good spaghetti _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Norms . Mary left _ _ _ Norms 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms good big 
+who ate spaghetti at Norms ? who ate _ _ spaghetti Norms 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms good big 
+what did Mary eat at Norms ? Mary ate _ _ what Norms 
+Mary ate a good spaghetti . Mary ate _ good spaghetti _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms good big 
+where did Mary eat spaghetti ? Mary ate _ _ spaghetti where 
+Mary ate spaghetti at Norms . Mary ate _ _ spaghetti Norms 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms good big 
+how did Mary like spaghetti at Norms ? Mary thought _ what spaghetti Norms 
+Mary thought spaghetti was good at Norms . Mary thought _ good spaghetti Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary fish Denny's good big 
+1 Mary went to Denny's . Mary went _ _ _ Denny's 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for fish . Mary asked waiter _ fish _ 
+1 Mary ate a good fish . Mary ate _ good fish _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Denny's . Mary left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee Mary fish Denny's good big 
+who ate fish at Denny's ? who ate _ _ fish Denny's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary fish Denny's good big 
+what did Mary eat at Denny's ? Mary ate _ _ what Denny's 
+Mary ate a good fish . Mary ate _ good fish _ 
+stop
+question
+$restaurant $coffee Mary fish Denny's good big 
+where did Mary eat fish ? Mary ate _ _ fish where 
+Mary ate fish at Denny's . Mary ate _ _ fish Denny's 
+stop
+question
+$restaurant $coffee Mary fish Denny's good big 
+how did Mary like fish at Denny's ? Mary thought _ what fish Denny's 
+Mary thought fish was good at Denny's . Mary thought _ good fish Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary fish Norms good big 
+1 Mary went to Norms . Mary went _ _ _ Norms 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for fish . Mary asked waiter _ fish _ 
+1 Mary ate a good fish . Mary ate _ good fish _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Norms . Mary left _ _ _ Norms 
+stop
+question
+$restaurant $coffee Mary fish Norms good big 
+who ate fish at Norms ? who ate _ _ fish Norms 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary fish Norms good big 
+what did Mary eat at Norms ? Mary ate _ _ what Norms 
+Mary ate a good fish . Mary ate _ good fish _ 
+stop
+question
+$restaurant $coffee Mary fish Norms good big 
+where did Mary eat fish ? Mary ate _ _ fish where 
+Mary ate fish at Norms . Mary ate _ _ fish Norms 
+stop
+question
+$restaurant $coffee Mary fish Norms good big 
+how did Mary like fish at Norms ? Mary thought _ what fish Norms 
+Mary thought fish was good at Norms . Mary thought _ good fish Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John spaghetti Denny's bad small 
+1 John went to Denny's . John went _ _ _ Denny's 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for spaghetti . John asked waiter _ spaghetti _ 
+1 John ate a bad spaghetti . John ate _ bad spaghetti _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Denny's . John left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee John spaghetti Denny's bad small 
+who ate spaghetti at Denny's ? who ate _ _ spaghetti Denny's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John spaghetti Denny's bad small 
+what did John eat at Denny's ? John ate _ _ what Denny's 
+John ate a bad spaghetti . John ate _ bad spaghetti _ 
+stop
+question
+$restaurant $coffee John spaghetti Denny's bad small 
+where did John eat spaghetti ? John ate _ _ spaghetti where 
+John ate spaghetti at Denny's . John ate _ _ spaghetti Denny's 
+stop
+question
+$restaurant $coffee John spaghetti Denny's bad small 
+how did John like spaghetti at Denny's ? John thought _ what spaghetti Denny's 
+John thought spaghetti was bad at Denny's . John thought _ bad spaghetti Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John spaghetti Norms bad small 
+1 John went to Norms . John went _ _ _ Norms 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for spaghetti . John asked waiter _ spaghetti _ 
+1 John ate a bad spaghetti . John ate _ bad spaghetti _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Norms . John left _ _ _ Norms 
+stop
+question
+$restaurant $coffee John spaghetti Norms bad small 
+who ate spaghetti at Norms ? who ate _ _ spaghetti Norms 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John spaghetti Norms bad small 
+what did John eat at Norms ? John ate _ _ what Norms 
+John ate a bad spaghetti . John ate _ bad spaghetti _ 
+stop
+question
+$restaurant $coffee John spaghetti Norms bad small 
+where did John eat spaghetti ? John ate _ _ spaghetti where 
+John ate spaghetti at Norms . John ate _ _ spaghetti Norms 
+stop
+question
+$restaurant $coffee John spaghetti Norms bad small 
+how did John like spaghetti at Norms ? John thought _ what spaghetti Norms 
+John thought spaghetti was bad at Norms . John thought _ bad spaghetti Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John fish Denny's bad small 
+1 John went to Denny's . John went _ _ _ Denny's 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for fish . John asked waiter _ fish _ 
+1 John ate a bad fish . John ate _ bad fish _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Denny's . John left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee John fish Denny's bad small 
+who ate fish at Denny's ? who ate _ _ fish Denny's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John fish Denny's bad small 
+what did John eat at Denny's ? John ate _ _ what Denny's 
+John ate a bad fish . John ate _ bad fish _ 
+stop
+question
+$restaurant $coffee John fish Denny's bad small 
+where did John eat fish ? John ate _ _ fish where 
+John ate fish at Denny's . John ate _ _ fish Denny's 
+stop
+question
+$restaurant $coffee John fish Denny's bad small 
+how did John like fish at Denny's ? John thought _ what fish Denny's 
+John thought fish was bad at Denny's . John thought _ bad fish Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee John fish Norms bad small 
+1 John went to Norms . John went _ _ _ Norms 
+1 John seated John . John seated _ _ John _ 
+1 John asked the waiter for fish . John asked waiter _ fish _ 
+1 John ate a bad fish . John ate _ bad fish _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Norms . John left _ _ _ Norms 
+stop
+question
+$restaurant $coffee John fish Norms bad small 
+who ate fish at Norms ? who ate _ _ fish Norms 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $coffee John fish Norms bad small 
+what did John eat at Norms ? John ate _ _ what Norms 
+John ate a bad fish . John ate _ bad fish _ 
+stop
+question
+$restaurant $coffee John fish Norms bad small 
+where did John eat fish ? John ate _ _ fish where 
+John ate fish at Norms . John ate _ _ fish Norms 
+stop
+question
+$restaurant $coffee John fish Norms bad small 
+how did John like fish at Norms ? John thought _ what fish Norms 
+John thought fish was bad at Norms . John thought _ bad fish Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary spaghetti Denny's bad small 
+1 Mary went to Denny's . Mary went _ _ _ Denny's 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for spaghetti . Mary asked waiter _ spaghetti _ 
+1 Mary ate a bad spaghetti . Mary ate _ bad spaghetti _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Denny's . Mary left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's bad small 
+who ate spaghetti at Denny's ? who ate _ _ spaghetti Denny's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's bad small 
+what did Mary eat at Denny's ? Mary ate _ _ what Denny's 
+Mary ate a bad spaghetti . Mary ate _ bad spaghetti _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's bad small 
+where did Mary eat spaghetti ? Mary ate _ _ spaghetti where 
+Mary ate spaghetti at Denny's . Mary ate _ _ spaghetti Denny's 
+stop
+question
+$restaurant $coffee Mary spaghetti Denny's bad small 
+how did Mary like spaghetti at Denny's ? Mary thought _ what spaghetti Denny's 
+Mary thought spaghetti was bad at Denny's . Mary thought _ bad spaghetti Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary spaghetti Norms bad small 
+1 Mary went to Norms . Mary went _ _ _ Norms 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for spaghetti . Mary asked waiter _ spaghetti _ 
+1 Mary ate a bad spaghetti . Mary ate _ bad spaghetti _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Norms . Mary left _ _ _ Norms 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms bad small 
+who ate spaghetti at Norms ? who ate _ _ spaghetti Norms 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms bad small 
+what did Mary eat at Norms ? Mary ate _ _ what Norms 
+Mary ate a bad spaghetti . Mary ate _ bad spaghetti _ 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms bad small 
+where did Mary eat spaghetti ? Mary ate _ _ spaghetti where 
+Mary ate spaghetti at Norms . Mary ate _ _ spaghetti Norms 
+stop
+question
+$restaurant $coffee Mary spaghetti Norms bad small 
+how did Mary like spaghetti at Norms ? Mary thought _ what spaghetti Norms 
+Mary thought spaghetti was bad at Norms . Mary thought _ bad spaghetti Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary fish Denny's bad small 
+1 Mary went to Denny's . Mary went _ _ _ Denny's 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for fish . Mary asked waiter _ fish _ 
+1 Mary ate a bad fish . Mary ate _ bad fish _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Denny's . Mary left _ _ _ Denny's 
+stop
+question
+$restaurant $coffee Mary fish Denny's bad small 
+who ate fish at Denny's ? who ate _ _ fish Denny's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary fish Denny's bad small 
+what did Mary eat at Denny's ? Mary ate _ _ what Denny's 
+Mary ate a bad fish . Mary ate _ bad fish _ 
+stop
+question
+$restaurant $coffee Mary fish Denny's bad small 
+where did Mary eat fish ? Mary ate _ _ fish where 
+Mary ate fish at Denny's . Mary ate _ _ fish Denny's 
+stop
+question
+$restaurant $coffee Mary fish Denny's bad small 
+how did Mary like fish at Denny's ? Mary thought _ what fish Denny's 
+Mary thought fish was bad at Denny's . Mary thought _ bad fish Denny's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $coffee Mary fish Norms bad small 
+1 Mary went to Norms . Mary went _ _ _ Norms 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary asked the waiter for fish . Mary asked waiter _ fish _ 
+1 Mary ate a bad fish . Mary ate _ bad fish _ 
+1 Mary left a small tip . Mary left waiter small tip _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Norms . Mary left _ _ _ Norms 
+stop
+question
+$restaurant $coffee Mary fish Norms bad small 
+who ate fish at Norms ? who ate _ _ fish Norms 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee Mary fish Norms bad small 
+what did Mary eat at Norms ? Mary ate _ _ what Norms 
+Mary ate a bad fish . Mary ate _ bad fish _ 
+stop
+question
+$restaurant $coffee Mary fish Norms bad small 
+where did Mary eat fish ? Mary ate _ _ fish where 
+Mary ate fish at Norms . Mary ate _ _ fish Norms 
+stop
+question
+$restaurant $coffee Mary fish Norms bad small 
+how did Mary like fish at Norms ? Mary thought _ what fish Norms 
+Mary thought fish was bad at Norms . Mary thought _ bad fish Norms 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast John hamburger McDonald's bad none 
+1 John went to McDonald's . John went _ _ _ McDonald's 
+1 John asked the cashier for hamburger . John asked cashier _ hamburger _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John seated John . John seated _ _ John _ 
+1 John ate a small hamburger . John ate _ small hamburger _ 
+1 the hamburger tasted bad . John tasted _ bad hamburger _ 
+1 John left McDonald's . John left _ _ _ McDonald's 
+stop
+question
+$restaurant $fast John hamburger McDonald's bad none 
+who ate hamburger at McDonald's ? who ate _ _ hamburger McDonald's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fast John hamburger McDonald's bad none 
+what did John eat at McDonald's ? John ate _ _ what McDonald's 
+John ate a small hamburger . John ate _ small hamburger _ 
+stop
+question
+$restaurant $fast John hamburger McDonald's bad none 
+where did John eat hamburger ? John ate _ _ hamburger where 
+John ate hamburger at McDonald's . John ate _ _ hamburger McDonald's 
+stop
+question
+$restaurant $fast John hamburger McDonald's bad none 
+how did John like hamburger at McDonald's ? John thought _ what hamburger McDonald's 
+John thought hamburger was bad at McDonald's . John thought _ bad hamburger McDonald's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast John hamburger BurgerKing bad none 
+1 John went to BurgerKing . John went _ _ _ BurgerKing 
+1 John asked the cashier for hamburger . John asked cashier _ hamburger _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John seated John . John seated _ _ John _ 
+1 John ate a small hamburger . John ate _ small hamburger _ 
+1 the hamburger tasted bad . John tasted _ bad hamburger _ 
+1 John left BurgerKing . John left _ _ _ BurgerKing 
+stop
+question
+$restaurant $fast John hamburger BurgerKing bad none 
+who ate hamburger at BurgerKing ? who ate _ _ hamburger BurgerKing 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fast John hamburger BurgerKing bad none 
+what did John eat at BurgerKing ? John ate _ _ what BurgerKing 
+John ate a small hamburger . John ate _ small hamburger _ 
+stop
+question
+$restaurant $fast John hamburger BurgerKing bad none 
+where did John eat hamburger ? John ate _ _ hamburger where 
+John ate hamburger at BurgerKing . John ate _ _ hamburger BurgerKing 
+stop
+question
+$restaurant $fast John hamburger BurgerKing bad none 
+how did John like hamburger at BurgerKing ? John thought _ what hamburger BurgerKing 
+John thought hamburger was bad at BurgerKing . John thought _ bad hamburger BurgerKing 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast John fries McDonald's bad none 
+1 John went to McDonald's . John went _ _ _ McDonald's 
+1 John asked the cashier for fries . John asked cashier _ fries _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John seated John . John seated _ _ John _ 
+1 John ate a small fries . John ate _ small fries _ 
+1 the fries tasted bad . John tasted _ bad fries _ 
+1 John left McDonald's . John left _ _ _ McDonald's 
+stop
+question
+$restaurant $fast John fries McDonald's bad none 
+who ate fries at McDonald's ? who ate _ _ fries McDonald's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fast John fries McDonald's bad none 
+what did John eat at McDonald's ? John ate _ _ what McDonald's 
+John ate a small fries . John ate _ small fries _ 
+stop
+question
+$restaurant $fast John fries McDonald's bad none 
+where did John eat fries ? John ate _ _ fries where 
+John ate fries at McDonald's . John ate _ _ fries McDonald's 
+stop
+question
+$restaurant $fast John fries McDonald's bad none 
+how did John like fries at McDonald's ? John thought _ what fries McDonald's 
+John thought fries was bad at McDonald's . John thought _ bad fries McDonald's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast John fries BurgerKing bad none 
+1 John went to BurgerKing . John went _ _ _ BurgerKing 
+1 John asked the cashier for fries . John asked cashier _ fries _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John seated John . John seated _ _ John _ 
+1 John ate a small fries . John ate _ small fries _ 
+1 the fries tasted bad . John tasted _ bad fries _ 
+1 John left BurgerKing . John left _ _ _ BurgerKing 
+stop
+question
+$restaurant $fast John fries BurgerKing bad none 
+who ate fries at BurgerKing ? who ate _ _ fries BurgerKing 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fast John fries BurgerKing bad none 
+what did John eat at BurgerKing ? John ate _ _ what BurgerKing 
+John ate a small fries . John ate _ small fries _ 
+stop
+question
+$restaurant $fast John fries BurgerKing bad none 
+where did John eat fries ? John ate _ _ fries where 
+John ate fries at BurgerKing . John ate _ _ fries BurgerKing 
+stop
+question
+$restaurant $fast John fries BurgerKing bad none 
+how did John like fries at BurgerKing ? John thought _ what fries BurgerKing 
+John thought fries was bad at BurgerKing . John thought _ bad fries BurgerKing 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast Mary hamburger McDonald's bad none 
+1 Mary went to McDonald's . Mary went _ _ _ McDonald's 
+1 Mary asked the cashier for hamburger . Mary asked cashier _ hamburger _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary ate a small hamburger . Mary ate _ small hamburger _ 
+1 the hamburger tasted bad . Mary tasted _ bad hamburger _ 
+1 Mary left McDonald's . Mary left _ _ _ McDonald's 
+stop
+question
+$restaurant $fast Mary hamburger McDonald's bad none 
+who ate hamburger at McDonald's ? who ate _ _ hamburger McDonald's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fast Mary hamburger McDonald's bad none 
+what did Mary eat at McDonald's ? Mary ate _ _ what McDonald's 
+Mary ate a small hamburger . Mary ate _ small hamburger _ 
+stop
+question
+$restaurant $fast Mary hamburger McDonald's bad none 
+where did Mary eat hamburger ? Mary ate _ _ hamburger where 
+Mary ate hamburger at McDonald's . Mary ate _ _ hamburger McDonald's 
+stop
+question
+$restaurant $fast Mary hamburger McDonald's bad none 
+how did Mary like hamburger at McDonald's ? Mary thought _ what hamburger McDonald's 
+Mary thought hamburger was bad at McDonald's . Mary thought _ bad hamburger McDonald's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast Mary hamburger BurgerKing bad none 
+1 Mary went to BurgerKing . Mary went _ _ _ BurgerKing 
+1 Mary asked the cashier for hamburger . Mary asked cashier _ hamburger _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary ate a small hamburger . Mary ate _ small hamburger _ 
+1 the hamburger tasted bad . Mary tasted _ bad hamburger _ 
+1 Mary left BurgerKing . Mary left _ _ _ BurgerKing 
+stop
+question
+$restaurant $fast Mary hamburger BurgerKing bad none 
+who ate hamburger at BurgerKing ? who ate _ _ hamburger BurgerKing 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fast Mary hamburger BurgerKing bad none 
+what did Mary eat at BurgerKing ? Mary ate _ _ what BurgerKing 
+Mary ate a small hamburger . Mary ate _ small hamburger _ 
+stop
+question
+$restaurant $fast Mary hamburger BurgerKing bad none 
+where did Mary eat hamburger ? Mary ate _ _ hamburger where 
+Mary ate hamburger at BurgerKing . Mary ate _ _ hamburger BurgerKing 
+stop
+question
+$restaurant $fast Mary hamburger BurgerKing bad none 
+how did Mary like hamburger at BurgerKing ? Mary thought _ what hamburger BurgerKing 
+Mary thought hamburger was bad at BurgerKing . Mary thought _ bad hamburger BurgerKing 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast Mary fries McDonald's bad none 
+1 Mary went to McDonald's . Mary went _ _ _ McDonald's 
+1 Mary asked the cashier for fries . Mary asked cashier _ fries _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary ate a small fries . Mary ate _ small fries _ 
+1 the fries tasted bad . Mary tasted _ bad fries _ 
+1 Mary left McDonald's . Mary left _ _ _ McDonald's 
+stop
+question
+$restaurant $fast Mary fries McDonald's bad none 
+who ate fries at McDonald's ? who ate _ _ fries McDonald's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fast Mary fries McDonald's bad none 
+what did Mary eat at McDonald's ? Mary ate _ _ what McDonald's 
+Mary ate a small fries . Mary ate _ small fries _ 
+stop
+question
+$restaurant $fast Mary fries McDonald's bad none 
+where did Mary eat fries ? Mary ate _ _ fries where 
+Mary ate fries at McDonald's . Mary ate _ _ fries McDonald's 
+stop
+question
+$restaurant $fast Mary fries McDonald's bad none 
+how did Mary like fries at McDonald's ? Mary thought _ what fries McDonald's 
+Mary thought fries was bad at McDonald's . Mary thought _ bad fries McDonald's 
+stop
+clear-networks
+read-and-paraphrase
+$restaurant $fast Mary fries BurgerKing bad none 
+1 Mary went to BurgerKing . Mary went _ _ _ BurgerKing 
+1 Mary asked the cashier for fries . Mary asked cashier _ fries _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary ate a small fries . Mary ate _ small fries _ 
+1 the fries tasted bad . Mary tasted _ bad fries _ 
+1 Mary left BurgerKing . Mary left _ _ _ BurgerKing 
+stop
+question
+$restaurant $fast Mary fries BurgerKing bad none 
+who ate fries at BurgerKing ? who ate _ _ fries BurgerKing 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fast Mary fries BurgerKing bad none 
+what did Mary eat at BurgerKing ? Mary ate _ _ what BurgerKing 
+Mary ate a small fries . Mary ate _ small fries _ 
+stop
+question
+$restaurant $fast Mary fries BurgerKing bad none 
+where did Mary eat fries ? Mary ate _ _ fries where 
+Mary ate fries at BurgerKing . Mary ate _ _ fries BurgerKing 
+stop
+question
+$restaurant $fast Mary fries BurgerKing bad none 
+how did Mary like fries at BurgerKing ? Mary thought _ what fries BurgerKing 
+Mary thought fries was bad at BurgerKing . Mary thought _ bad fries BurgerKing 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing John shoes Broadway _ _ 
+1 John went to Broadway . John went _ _ _ Broadway 
+1 John looked for good shoes . John looked _ good shoes _ 
+1 John tried on several shoes . John tried John several shoes _ 
+1 John took the best shoes . John took _ best shoes _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Broadway . John left _ _ _ Broadway 
+stop
+question
+$shopping $clothing John shoes Broadway _ _ 
+who bought shoes at Broadway ? who bought _ _ shoes Broadway 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $clothing John shoes Broadway _ _ 
+what did John buy at Broadway ? John bought _ _ what Broadway 
+John bought shoes . John bought _ _ shoes _ 
+stop
+question
+$shopping $clothing John shoes Broadway _ _ 
+where did John buy shoes ? John bought _ _ shoes where 
+John bought shoes at Broadway . John bought _ _ shoes Broadway 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing John shoes Bullock's _ _ 
+1 John went to Bullock's . John went _ _ _ Bullock's 
+1 John looked for good shoes . John looked _ good shoes _ 
+1 John tried on several shoes . John tried John several shoes _ 
+1 John took the best shoes . John took _ best shoes _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Bullock's . John left _ _ _ Bullock's 
+stop
+question
+$shopping $clothing John shoes Bullock's _ _ 
+who bought shoes at Bullock's ? who bought _ _ shoes Bullock's 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $clothing John shoes Bullock's _ _ 
+what did John buy at Bullock's ? John bought _ _ what Bullock's 
+John bought shoes . John bought _ _ shoes _ 
+stop
+question
+$shopping $clothing John shoes Bullock's _ _ 
+where did John buy shoes ? John bought _ _ shoes where 
+John bought shoes at Bullock's . John bought _ _ shoes Bullock's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing John jeans Broadway _ _ 
+1 John went to Broadway . John went _ _ _ Broadway 
+1 John looked for good jeans . John looked _ good jeans _ 
+1 John tried on several jeans . John tried John several jeans _ 
+1 John took the best jeans . John took _ best jeans _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Broadway . John left _ _ _ Broadway 
+stop
+question
+$shopping $clothing John jeans Broadway _ _ 
+who bought jeans at Broadway ? who bought _ _ jeans Broadway 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $clothing John jeans Broadway _ _ 
+what did John buy at Broadway ? John bought _ _ what Broadway 
+John bought jeans . John bought _ _ jeans _ 
+stop
+question
+$shopping $clothing John jeans Broadway _ _ 
+where did John buy jeans ? John bought _ _ jeans where 
+John bought jeans at Broadway . John bought _ _ jeans Broadway 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing John jeans Bullock's _ _ 
+1 John went to Bullock's . John went _ _ _ Bullock's 
+1 John looked for good jeans . John looked _ good jeans _ 
+1 John tried on several jeans . John tried John several jeans _ 
+1 John took the best jeans . John took _ best jeans _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Bullock's . John left _ _ _ Bullock's 
+stop
+question
+$shopping $clothing John jeans Bullock's _ _ 
+who bought jeans at Bullock's ? who bought _ _ jeans Bullock's 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $clothing John jeans Bullock's _ _ 
+what did John buy at Bullock's ? John bought _ _ what Bullock's 
+John bought jeans . John bought _ _ jeans _ 
+stop
+question
+$shopping $clothing John jeans Bullock's _ _ 
+where did John buy jeans ? John bought _ _ jeans where 
+John bought jeans at Bullock's . John bought _ _ jeans Bullock's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing Mary shoes Broadway _ _ 
+1 Mary went to Broadway . Mary went _ _ _ Broadway 
+1 Mary looked for good shoes . Mary looked _ good shoes _ 
+1 Mary tried on several shoes . Mary tried Mary several shoes _ 
+1 Mary took the best shoes . Mary took _ best shoes _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Broadway . Mary left _ _ _ Broadway 
+stop
+question
+$shopping $clothing Mary shoes Broadway _ _ 
+who bought shoes at Broadway ? who bought _ _ shoes Broadway 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $clothing Mary shoes Broadway _ _ 
+what did Mary buy at Broadway ? Mary bought _ _ what Broadway 
+Mary bought shoes . Mary bought _ _ shoes _ 
+stop
+question
+$shopping $clothing Mary shoes Broadway _ _ 
+where did Mary buy shoes ? Mary bought _ _ shoes where 
+Mary bought shoes at Broadway . Mary bought _ _ shoes Broadway 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing Mary shoes Bullock's _ _ 
+1 Mary went to Bullock's . Mary went _ _ _ Bullock's 
+1 Mary looked for good shoes . Mary looked _ good shoes _ 
+1 Mary tried on several shoes . Mary tried Mary several shoes _ 
+1 Mary took the best shoes . Mary took _ best shoes _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Bullock's . Mary left _ _ _ Bullock's 
+stop
+question
+$shopping $clothing Mary shoes Bullock's _ _ 
+who bought shoes at Bullock's ? who bought _ _ shoes Bullock's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $clothing Mary shoes Bullock's _ _ 
+what did Mary buy at Bullock's ? Mary bought _ _ what Bullock's 
+Mary bought shoes . Mary bought _ _ shoes _ 
+stop
+question
+$shopping $clothing Mary shoes Bullock's _ _ 
+where did Mary buy shoes ? Mary bought _ _ shoes where 
+Mary bought shoes at Bullock's . Mary bought _ _ shoes Bullock's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing Mary jeans Broadway _ _ 
+1 Mary went to Broadway . Mary went _ _ _ Broadway 
+1 Mary looked for good jeans . Mary looked _ good jeans _ 
+1 Mary tried on several jeans . Mary tried Mary several jeans _ 
+1 Mary took the best jeans . Mary took _ best jeans _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Broadway . Mary left _ _ _ Broadway 
+stop
+question
+$shopping $clothing Mary jeans Broadway _ _ 
+who bought jeans at Broadway ? who bought _ _ jeans Broadway 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $clothing Mary jeans Broadway _ _ 
+what did Mary buy at Broadway ? Mary bought _ _ what Broadway 
+Mary bought jeans . Mary bought _ _ jeans _ 
+stop
+question
+$shopping $clothing Mary jeans Broadway _ _ 
+where did Mary buy jeans ? Mary bought _ _ jeans where 
+Mary bought jeans at Broadway . Mary bought _ _ jeans Broadway 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $clothing Mary jeans Bullock's _ _ 
+1 Mary went to Bullock's . Mary went _ _ _ Bullock's 
+1 Mary looked for good jeans . Mary looked _ good jeans _ 
+1 Mary tried on several jeans . Mary tried Mary several jeans _ 
+1 Mary took the best jeans . Mary took _ best jeans _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Bullock's . Mary left _ _ _ Bullock's 
+stop
+question
+$shopping $clothing Mary jeans Bullock's _ _ 
+who bought jeans at Bullock's ? who bought _ _ jeans Bullock's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $clothing Mary jeans Bullock's _ _ 
+what did Mary buy at Bullock's ? Mary bought _ _ what Bullock's 
+Mary bought jeans . Mary bought _ _ jeans _ 
+stop
+question
+$shopping $clothing Mary jeans Bullock's _ _ 
+where did Mary buy jeans ? Mary bought _ _ jeans where 
+Mary bought jeans at Bullock's . Mary bought _ _ jeans Bullock's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics John CD-player RadioShack _ _ 
+1 John went to RadioShack . John went _ _ _ RadioShack 
+1 John looked for good CD-player . John looked _ good CD-player _ 
+1 John asked the staff questions about CD-player . John asked staff CD-player questions _ 
+1 John took the best CD-player . John took _ best CD-player _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left RadioShack . John left _ _ _ RadioShack 
+stop
+question
+$shopping $electronics John CD-player RadioShack _ _ 
+who bought CD-player at RadioShack ? who bought _ _ CD-player RadioShack 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $electronics John CD-player RadioShack _ _ 
+what did John buy at RadioShack ? John bought _ _ what RadioShack 
+John bought CD-player . John bought _ _ CD-player _ 
+stop
+question
+$shopping $electronics John CD-player RadioShack _ _ 
+where did John buy CD-player ? John bought _ _ CD-player where 
+John bought CD-player at RadioShack . John bought _ _ CD-player RadioShack 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics John CD-player CircuitCty _ _ 
+1 John went to CircuitCty . John went _ _ _ CircuitCty 
+1 John looked for good CD-player . John looked _ good CD-player _ 
+1 John asked the staff questions about CD-player . John asked staff CD-player questions _ 
+1 John took the best CD-player . John took _ best CD-player _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left CircuitCty . John left _ _ _ CircuitCty 
+stop
+question
+$shopping $electronics John CD-player CircuitCty _ _ 
+who bought CD-player at CircuitCty ? who bought _ _ CD-player CircuitCty 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $electronics John CD-player CircuitCty _ _ 
+what did John buy at CircuitCty ? John bought _ _ what CircuitCty 
+John bought CD-player . John bought _ _ CD-player _ 
+stop
+question
+$shopping $electronics John CD-player CircuitCty _ _ 
+where did John buy CD-player ? John bought _ _ CD-player where 
+John bought CD-player at CircuitCty . John bought _ _ CD-player CircuitCty 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics John tv RadioShack _ _ 
+1 John went to RadioShack . John went _ _ _ RadioShack 
+1 John looked for good tv . John looked _ good tv _ 
+1 John asked the staff questions about tv . John asked staff tv questions _ 
+1 John took the best tv . John took _ best tv _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left RadioShack . John left _ _ _ RadioShack 
+stop
+question
+$shopping $electronics John tv RadioShack _ _ 
+who bought tv at RadioShack ? who bought _ _ tv RadioShack 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $electronics John tv RadioShack _ _ 
+what did John buy at RadioShack ? John bought _ _ what RadioShack 
+John bought tv . John bought _ _ tv _ 
+stop
+question
+$shopping $electronics John tv RadioShack _ _ 
+where did John buy tv ? John bought _ _ tv where 
+John bought tv at RadioShack . John bought _ _ tv RadioShack 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics John tv CircuitCty _ _ 
+1 John went to CircuitCty . John went _ _ _ CircuitCty 
+1 John looked for good tv . John looked _ good tv _ 
+1 John asked the staff questions about tv . John asked staff tv questions _ 
+1 John took the best tv . John took _ best tv _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left CircuitCty . John left _ _ _ CircuitCty 
+stop
+question
+$shopping $electronics John tv CircuitCty _ _ 
+who bought tv at CircuitCty ? who bought _ _ tv CircuitCty 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $electronics John tv CircuitCty _ _ 
+what did John buy at CircuitCty ? John bought _ _ what CircuitCty 
+John bought tv . John bought _ _ tv _ 
+stop
+question
+$shopping $electronics John tv CircuitCty _ _ 
+where did John buy tv ? John bought _ _ tv where 
+John bought tv at CircuitCty . John bought _ _ tv CircuitCty 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics Mary CD-player RadioShack _ _ 
+1 Mary went to RadioShack . Mary went _ _ _ RadioShack 
+1 Mary looked for good CD-player . Mary looked _ good CD-player _ 
+1 Mary asked the staff questions about CD-player . Mary asked staff CD-player questions _ 
+1 Mary took the best CD-player . Mary took _ best CD-player _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left RadioShack . Mary left _ _ _ RadioShack 
+stop
+question
+$shopping $electronics Mary CD-player RadioShack _ _ 
+who bought CD-player at RadioShack ? who bought _ _ CD-player RadioShack 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $electronics Mary CD-player RadioShack _ _ 
+what did Mary buy at RadioShack ? Mary bought _ _ what RadioShack 
+Mary bought CD-player . Mary bought _ _ CD-player _ 
+stop
+question
+$shopping $electronics Mary CD-player RadioShack _ _ 
+where did Mary buy CD-player ? Mary bought _ _ CD-player where 
+Mary bought CD-player at RadioShack . Mary bought _ _ CD-player RadioShack 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics Mary CD-player CircuitCty _ _ 
+1 Mary went to CircuitCty . Mary went _ _ _ CircuitCty 
+1 Mary looked for good CD-player . Mary looked _ good CD-player _ 
+1 Mary asked the staff questions about CD-player . Mary asked staff CD-player questions _ 
+1 Mary took the best CD-player . Mary took _ best CD-player _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left CircuitCty . Mary left _ _ _ CircuitCty 
+stop
+question
+$shopping $electronics Mary CD-player CircuitCty _ _ 
+who bought CD-player at CircuitCty ? who bought _ _ CD-player CircuitCty 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $electronics Mary CD-player CircuitCty _ _ 
+what did Mary buy at CircuitCty ? Mary bought _ _ what CircuitCty 
+Mary bought CD-player . Mary bought _ _ CD-player _ 
+stop
+question
+$shopping $electronics Mary CD-player CircuitCty _ _ 
+where did Mary buy CD-player ? Mary bought _ _ CD-player where 
+Mary bought CD-player at CircuitCty . Mary bought _ _ CD-player CircuitCty 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics Mary tv RadioShack _ _ 
+1 Mary went to RadioShack . Mary went _ _ _ RadioShack 
+1 Mary looked for good tv . Mary looked _ good tv _ 
+1 Mary asked the staff questions about tv . Mary asked staff tv questions _ 
+1 Mary took the best tv . Mary took _ best tv _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left RadioShack . Mary left _ _ _ RadioShack 
+stop
+question
+$shopping $electronics Mary tv RadioShack _ _ 
+who bought tv at RadioShack ? who bought _ _ tv RadioShack 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $electronics Mary tv RadioShack _ _ 
+what did Mary buy at RadioShack ? Mary bought _ _ what RadioShack 
+Mary bought tv . Mary bought _ _ tv _ 
+stop
+question
+$shopping $electronics Mary tv RadioShack _ _ 
+where did Mary buy tv ? Mary bought _ _ tv where 
+Mary bought tv at RadioShack . Mary bought _ _ tv RadioShack 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $electronics Mary tv CircuitCty _ _ 
+1 Mary went to CircuitCty . Mary went _ _ _ CircuitCty 
+1 Mary looked for good tv . Mary looked _ good tv _ 
+1 Mary asked the staff questions about tv . Mary asked staff tv questions _ 
+1 Mary took the best tv . Mary took _ best tv _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left CircuitCty . Mary left _ _ _ CircuitCty 
+stop
+question
+$shopping $electronics Mary tv CircuitCty _ _ 
+who bought tv at CircuitCty ? who bought _ _ tv CircuitCty 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $electronics Mary tv CircuitCty _ _ 
+what did Mary buy at CircuitCty ? Mary bought _ _ what CircuitCty 
+Mary bought tv . Mary bought _ _ tv _ 
+stop
+question
+$shopping $electronics Mary tv CircuitCty _ _ 
+where did Mary buy tv ? Mary bought _ _ tv where 
+Mary bought tv at CircuitCty . Mary bought _ _ tv CircuitCty 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery John softdrinks Ralph's _ _ 
+1 John went to Ralph's . John went _ _ _ Ralph's 
+1 John took a big cart . John took _ big cart _ 
+1 John compared softdrinks prices . John compared _ softdrinks prices _ 
+1 John took several softdrinks . John took _ several softdrinks _ 
+1 John waited in a big line . John waited _ big _ line 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Ralph's . John left _ _ _ Ralph's 
+stop
+question
+$shopping $grocery John softdrinks Ralph's _ _ 
+who bought softdrinks at Ralph's ? who bought _ _ softdrinks Ralph's 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $grocery John softdrinks Ralph's _ _ 
+what did John buy at Ralph's ? John bought _ _ what Ralph's 
+John bought softdrinks . John bought _ _ softdrinks _ 
+stop
+question
+$shopping $grocery John softdrinks Ralph's _ _ 
+where did John buy softdrinks ? John bought _ _ softdrinks where 
+John bought softdrinks at Ralph's . John bought _ _ softdrinks Ralph's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery John softdrinks Safeway _ _ 
+1 John went to Safeway . John went _ _ _ Safeway 
+1 John took a big cart . John took _ big cart _ 
+1 John compared softdrinks prices . John compared _ softdrinks prices _ 
+1 John took several softdrinks . John took _ several softdrinks _ 
+1 John waited in a big line . John waited _ big _ line 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Safeway . John left _ _ _ Safeway 
+stop
+question
+$shopping $grocery John softdrinks Safeway _ _ 
+who bought softdrinks at Safeway ? who bought _ _ softdrinks Safeway 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $grocery John softdrinks Safeway _ _ 
+what did John buy at Safeway ? John bought _ _ what Safeway 
+John bought softdrinks . John bought _ _ softdrinks _ 
+stop
+question
+$shopping $grocery John softdrinks Safeway _ _ 
+where did John buy softdrinks ? John bought _ _ softdrinks where 
+John bought softdrinks at Safeway . John bought _ _ softdrinks Safeway 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery John vegetables Ralph's _ _ 
+1 John went to Ralph's . John went _ _ _ Ralph's 
+1 John took a big cart . John took _ big cart _ 
+1 John compared vegetables prices . John compared _ vegetables prices _ 
+1 John took several vegetables . John took _ several vegetables _ 
+1 John waited in a big line . John waited _ big _ line 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Ralph's . John left _ _ _ Ralph's 
+stop
+question
+$shopping $grocery John vegetables Ralph's _ _ 
+who bought vegetables at Ralph's ? who bought _ _ vegetables Ralph's 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $grocery John vegetables Ralph's _ _ 
+what did John buy at Ralph's ? John bought _ _ what Ralph's 
+John bought vegetables . John bought _ _ vegetables _ 
+stop
+question
+$shopping $grocery John vegetables Ralph's _ _ 
+where did John buy vegetables ? John bought _ _ vegetables where 
+John bought vegetables at Ralph's . John bought _ _ vegetables Ralph's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery John vegetables Safeway _ _ 
+1 John went to Safeway . John went _ _ _ Safeway 
+1 John took a big cart . John took _ big cart _ 
+1 John compared vegetables prices . John compared _ vegetables prices _ 
+1 John took several vegetables . John took _ several vegetables _ 
+1 John waited in a big line . John waited _ big _ line 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left Safeway . John left _ _ _ Safeway 
+stop
+question
+$shopping $grocery John vegetables Safeway _ _ 
+who bought vegetables at Safeway ? who bought _ _ vegetables Safeway 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $grocery John vegetables Safeway _ _ 
+what did John buy at Safeway ? John bought _ _ what Safeway 
+John bought vegetables . John bought _ _ vegetables _ 
+stop
+question
+$shopping $grocery John vegetables Safeway _ _ 
+where did John buy vegetables ? John bought _ _ vegetables where 
+John bought vegetables at Safeway . John bought _ _ vegetables Safeway 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery Mary softdrinks Ralph's _ _ 
+1 Mary went to Ralph's . Mary went _ _ _ Ralph's 
+1 Mary took a big cart . Mary took _ big cart _ 
+1 Mary compared softdrinks prices . Mary compared _ softdrinks prices _ 
+1 Mary took several softdrinks . Mary took _ several softdrinks _ 
+1 Mary waited in a big line . Mary waited _ big _ line 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Ralph's . Mary left _ _ _ Ralph's 
+stop
+question
+$shopping $grocery Mary softdrinks Ralph's _ _ 
+who bought softdrinks at Ralph's ? who bought _ _ softdrinks Ralph's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $grocery Mary softdrinks Ralph's _ _ 
+what did Mary buy at Ralph's ? Mary bought _ _ what Ralph's 
+Mary bought softdrinks . Mary bought _ _ softdrinks _ 
+stop
+question
+$shopping $grocery Mary softdrinks Ralph's _ _ 
+where did Mary buy softdrinks ? Mary bought _ _ softdrinks where 
+Mary bought softdrinks at Ralph's . Mary bought _ _ softdrinks Ralph's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery Mary softdrinks Safeway _ _ 
+1 Mary went to Safeway . Mary went _ _ _ Safeway 
+1 Mary took a big cart . Mary took _ big cart _ 
+1 Mary compared softdrinks prices . Mary compared _ softdrinks prices _ 
+1 Mary took several softdrinks . Mary took _ several softdrinks _ 
+1 Mary waited in a big line . Mary waited _ big _ line 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Safeway . Mary left _ _ _ Safeway 
+stop
+question
+$shopping $grocery Mary softdrinks Safeway _ _ 
+who bought softdrinks at Safeway ? who bought _ _ softdrinks Safeway 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $grocery Mary softdrinks Safeway _ _ 
+what did Mary buy at Safeway ? Mary bought _ _ what Safeway 
+Mary bought softdrinks . Mary bought _ _ softdrinks _ 
+stop
+question
+$shopping $grocery Mary softdrinks Safeway _ _ 
+where did Mary buy softdrinks ? Mary bought _ _ softdrinks where 
+Mary bought softdrinks at Safeway . Mary bought _ _ softdrinks Safeway 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery Mary vegetables Ralph's _ _ 
+1 Mary went to Ralph's . Mary went _ _ _ Ralph's 
+1 Mary took a big cart . Mary took _ big cart _ 
+1 Mary compared vegetables prices . Mary compared _ vegetables prices _ 
+1 Mary took several vegetables . Mary took _ several vegetables _ 
+1 Mary waited in a big line . Mary waited _ big _ line 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Ralph's . Mary left _ _ _ Ralph's 
+stop
+question
+$shopping $grocery Mary vegetables Ralph's _ _ 
+who bought vegetables at Ralph's ? who bought _ _ vegetables Ralph's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $grocery Mary vegetables Ralph's _ _ 
+what did Mary buy at Ralph's ? Mary bought _ _ what Ralph's 
+Mary bought vegetables . Mary bought _ _ vegetables _ 
+stop
+question
+$shopping $grocery Mary vegetables Ralph's _ _ 
+where did Mary buy vegetables ? Mary bought _ _ vegetables where 
+Mary bought vegetables at Ralph's . Mary bought _ _ vegetables Ralph's 
+stop
+clear-networks
+read-and-paraphrase
+$shopping $grocery Mary vegetables Safeway _ _ 
+1 Mary went to Safeway . Mary went _ _ _ Safeway 
+1 Mary took a big cart . Mary took _ big cart _ 
+1 Mary compared vegetables prices . Mary compared _ vegetables prices _ 
+1 Mary took several vegetables . Mary took _ several vegetables _ 
+1 Mary waited in a big line . Mary waited _ big _ line 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary left Safeway . Mary left _ _ _ Safeway 
+stop
+question
+$shopping $grocery Mary vegetables Safeway _ _ 
+who bought vegetables at Safeway ? who bought _ _ vegetables Safeway 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$shopping $grocery Mary vegetables Safeway _ _ 
+what did Mary buy at Safeway ? Mary bought _ _ what Safeway 
+Mary bought vegetables . Mary bought _ _ vegetables _ 
+stop
+question
+$shopping $grocery Mary vegetables Safeway _ _ 
+where did Mary buy vegetables ? Mary bought _ _ vegetables where 
+Mary bought vegetables at Safeway . Mary bought _ _ vegetables Safeway 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane John lax jfk big _ 
+1 John went to lax . John went _ _ _ lax 
+1 John checked-in for a flight to jfk . John checked-in _ jfk flight _ 
+1 John waited at the gate for boarding . John waited _ _ boarding gate 
+1 John got-on the plane . John got-on _ _ _ plane 
+1 the plane took-off from lax . plane took-off _ _ _ lax 
+1 the plane arrived at jfk . plane arrived _ _ _ jfk 
+1 John got-off the plane . John got-off _ _ _ plane 
+stop
+question
+$travel $plane John lax jfk big _ 
+who traveled to jfk ? who traveled _ _ _ jfk 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $plane John lax jfk big _ 
+what did John take to jfk ? John took _ _ what jfk 
+John took a plane . John took _ _ plane _ 
+stop
+question
+$travel $plane John lax jfk big _ 
+where did John take a plane to ? John took _ _ plane where 
+John took a plane to jfk . John took _ _ plane jfk 
+stop
+question
+$travel $plane John lax jfk big _ 
+did John travel big distance to jfk ? John traveled _ big distance jfk 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane John lax sfo big _ 
+1 John went to lax . John went _ _ _ lax 
+1 John checked-in for a flight to sfo . John checked-in _ sfo flight _ 
+1 John waited at the gate for boarding . John waited _ _ boarding gate 
+1 John got-on the plane . John got-on _ _ _ plane 
+1 the plane took-off from lax . plane took-off _ _ _ lax 
+1 the plane arrived at sfo . plane arrived _ _ _ sfo 
+1 John got-off the plane . John got-off _ _ _ plane 
+stop
+question
+$travel $plane John lax sfo big _ 
+who traveled to sfo ? who traveled _ _ _ sfo 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $plane John lax sfo big _ 
+what did John take to sfo ? John took _ _ what sfo 
+John took a plane . John took _ _ plane _ 
+stop
+question
+$travel $plane John lax sfo big _ 
+where did John take a plane to ? John took _ _ plane where 
+John took a plane to sfo . John took _ _ plane sfo 
+stop
+question
+$travel $plane John lax sfo big _ 
+did John travel big distance to sfo ? John traveled _ big distance sfo 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane John dfw jfk big _ 
+1 John went to dfw . John went _ _ _ dfw 
+1 John checked-in for a flight to jfk . John checked-in _ jfk flight _ 
+1 John waited at the gate for boarding . John waited _ _ boarding gate 
+1 John got-on the plane . John got-on _ _ _ plane 
+1 the plane took-off from dfw . plane took-off _ _ _ dfw 
+1 the plane arrived at jfk . plane arrived _ _ _ jfk 
+1 John got-off the plane . John got-off _ _ _ plane 
+stop
+question
+$travel $plane John dfw jfk big _ 
+who traveled to jfk ? who traveled _ _ _ jfk 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $plane John dfw jfk big _ 
+what did John take to jfk ? John took _ _ what jfk 
+John took a plane . John took _ _ plane _ 
+stop
+question
+$travel $plane John dfw jfk big _ 
+where did John take a plane to ? John took _ _ plane where 
+John took a plane to jfk . John took _ _ plane jfk 
+stop
+question
+$travel $plane John dfw jfk big _ 
+did John travel big distance to jfk ? John traveled _ big distance jfk 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane John dfw sfo big _ 
+1 John went to dfw . John went _ _ _ dfw 
+1 John checked-in for a flight to sfo . John checked-in _ sfo flight _ 
+1 John waited at the gate for boarding . John waited _ _ boarding gate 
+1 John got-on the plane . John got-on _ _ _ plane 
+1 the plane took-off from dfw . plane took-off _ _ _ dfw 
+1 the plane arrived at sfo . plane arrived _ _ _ sfo 
+1 John got-off the plane . John got-off _ _ _ plane 
+stop
+question
+$travel $plane John dfw sfo big _ 
+who traveled to sfo ? who traveled _ _ _ sfo 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $plane John dfw sfo big _ 
+what did John take to sfo ? John took _ _ what sfo 
+John took a plane . John took _ _ plane _ 
+stop
+question
+$travel $plane John dfw sfo big _ 
+where did John take a plane to ? John took _ _ plane where 
+John took a plane to sfo . John took _ _ plane sfo 
+stop
+question
+$travel $plane John dfw sfo big _ 
+did John travel big distance to sfo ? John traveled _ big distance sfo 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane Mary lax jfk big _ 
+1 Mary went to lax . Mary went _ _ _ lax 
+1 Mary checked-in for a flight to jfk . Mary checked-in _ jfk flight _ 
+1 Mary waited at the gate for boarding . Mary waited _ _ boarding gate 
+1 Mary got-on the plane . Mary got-on _ _ _ plane 
+1 the plane took-off from lax . plane took-off _ _ _ lax 
+1 the plane arrived at jfk . plane arrived _ _ _ jfk 
+1 Mary got-off the plane . Mary got-off _ _ _ plane 
+stop
+question
+$travel $plane Mary lax jfk big _ 
+who traveled to jfk ? who traveled _ _ _ jfk 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $plane Mary lax jfk big _ 
+what did Mary take to jfk ? Mary took _ _ what jfk 
+Mary took a plane . Mary took _ _ plane _ 
+stop
+question
+$travel $plane Mary lax jfk big _ 
+where did Mary take a plane to ? Mary took _ _ plane where 
+Mary took a plane to jfk . Mary took _ _ plane jfk 
+stop
+question
+$travel $plane Mary lax jfk big _ 
+did Mary travel big distance to jfk ? Mary traveled _ big distance jfk 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane Mary lax sfo big _ 
+1 Mary went to lax . Mary went _ _ _ lax 
+1 Mary checked-in for a flight to sfo . Mary checked-in _ sfo flight _ 
+1 Mary waited at the gate for boarding . Mary waited _ _ boarding gate 
+1 Mary got-on the plane . Mary got-on _ _ _ plane 
+1 the plane took-off from lax . plane took-off _ _ _ lax 
+1 the plane arrived at sfo . plane arrived _ _ _ sfo 
+1 Mary got-off the plane . Mary got-off _ _ _ plane 
+stop
+question
+$travel $plane Mary lax sfo big _ 
+who traveled to sfo ? who traveled _ _ _ sfo 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $plane Mary lax sfo big _ 
+what did Mary take to sfo ? Mary took _ _ what sfo 
+Mary took a plane . Mary took _ _ plane _ 
+stop
+question
+$travel $plane Mary lax sfo big _ 
+where did Mary take a plane to ? Mary took _ _ plane where 
+Mary took a plane to sfo . Mary took _ _ plane sfo 
+stop
+question
+$travel $plane Mary lax sfo big _ 
+did Mary travel big distance to sfo ? Mary traveled _ big distance sfo 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane Mary dfw jfk big _ 
+1 Mary went to dfw . Mary went _ _ _ dfw 
+1 Mary checked-in for a flight to jfk . Mary checked-in _ jfk flight _ 
+1 Mary waited at the gate for boarding . Mary waited _ _ boarding gate 
+1 Mary got-on the plane . Mary got-on _ _ _ plane 
+1 the plane took-off from dfw . plane took-off _ _ _ dfw 
+1 the plane arrived at jfk . plane arrived _ _ _ jfk 
+1 Mary got-off the plane . Mary got-off _ _ _ plane 
+stop
+question
+$travel $plane Mary dfw jfk big _ 
+who traveled to jfk ? who traveled _ _ _ jfk 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $plane Mary dfw jfk big _ 
+what did Mary take to jfk ? Mary took _ _ what jfk 
+Mary took a plane . Mary took _ _ plane _ 
+stop
+question
+$travel $plane Mary dfw jfk big _ 
+where did Mary take a plane to ? Mary took _ _ plane where 
+Mary took a plane to jfk . Mary took _ _ plane jfk 
+stop
+question
+$travel $plane Mary dfw jfk big _ 
+did Mary travel big distance to jfk ? Mary traveled _ big distance jfk 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $plane Mary dfw sfo big _ 
+1 Mary went to dfw . Mary went _ _ _ dfw 
+1 Mary checked-in for a flight to sfo . Mary checked-in _ sfo flight _ 
+1 Mary waited at the gate for boarding . Mary waited _ _ boarding gate 
+1 Mary got-on the plane . Mary got-on _ _ _ plane 
+1 the plane took-off from dfw . plane took-off _ _ _ dfw 
+1 the plane arrived at sfo . plane arrived _ _ _ sfo 
+1 Mary got-off the plane . Mary got-off _ _ _ plane 
+stop
+question
+$travel $plane Mary dfw sfo big _ 
+who traveled to sfo ? who traveled _ _ _ sfo 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $plane Mary dfw sfo big _ 
+what did Mary take to sfo ? Mary took _ _ what sfo 
+Mary took a plane . Mary took _ _ plane _ 
+stop
+question
+$travel $plane Mary dfw sfo big _ 
+where did Mary take a plane to ? Mary took _ _ plane where 
+Mary took a plane to sfo . Mary took _ _ plane sfo 
+stop
+question
+$travel $plane Mary dfw sfo big _ 
+did Mary travel big distance to sfo ? Mary traveled _ big distance sfo 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John CentralSta NewYork big _ 
+1 John went to CentralSta . John went _ _ _ CentralSta 
+1 John bought a ticket to NewYork . John bought _ NewYork ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a big distance . John traveled _ big distance _ 
+1 John got-off at NewYork . John got-off _ _ _ NewYork 
+stop
+question
+$travel $train John CentralSta NewYork big _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John CentralSta NewYork big _ 
+what did John take to NewYork ? John took _ _ what NewYork 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John CentralSta NewYork big _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to NewYork . John took _ _ train NewYork 
+stop
+question
+$travel $train John CentralSta NewYork big _ 
+did John travel big distance to NewYork ? John traveled _ big distance NewYork 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John CentralSta Boston big _ 
+1 John went to CentralSta . John went _ _ _ CentralSta 
+1 John bought a ticket to Boston . John bought _ Boston ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a big distance . John traveled _ big distance _ 
+1 John got-off at Boston . John got-off _ _ _ Boston 
+stop
+question
+$travel $train John CentralSta Boston big _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John CentralSta Boston big _ 
+what did John take to Boston ? John took _ _ what Boston 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John CentralSta Boston big _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to Boston . John took _ _ train Boston 
+stop
+question
+$travel $train John CentralSta Boston big _ 
+did John travel big distance to Boston ? John traveled _ big distance Boston 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John DowntownSt NewYork big _ 
+1 John went to DowntownSt . John went _ _ _ DowntownSt 
+1 John bought a ticket to NewYork . John bought _ NewYork ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a big distance . John traveled _ big distance _ 
+1 John got-off at NewYork . John got-off _ _ _ NewYork 
+stop
+question
+$travel $train John DowntownSt NewYork big _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John DowntownSt NewYork big _ 
+what did John take to NewYork ? John took _ _ what NewYork 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John DowntownSt NewYork big _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to NewYork . John took _ _ train NewYork 
+stop
+question
+$travel $train John DowntownSt NewYork big _ 
+did John travel big distance to NewYork ? John traveled _ big distance NewYork 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John DowntownSt Boston big _ 
+1 John went to DowntownSt . John went _ _ _ DowntownSt 
+1 John bought a ticket to Boston . John bought _ Boston ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a big distance . John traveled _ big distance _ 
+1 John got-off at Boston . John got-off _ _ _ Boston 
+stop
+question
+$travel $train John DowntownSt Boston big _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John DowntownSt Boston big _ 
+what did John take to Boston ? John took _ _ what Boston 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John DowntownSt Boston big _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to Boston . John took _ _ train Boston 
+stop
+question
+$travel $train John DowntownSt Boston big _ 
+did John travel big distance to Boston ? John traveled _ big distance Boston 
+John traveled a big distance . John traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary CentralSta NewYork big _ 
+1 Mary went to CentralSta . Mary went _ _ _ CentralSta 
+1 Mary bought a ticket to NewYork . Mary bought _ NewYork ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a big distance . Mary traveled _ big distance _ 
+1 Mary got-off at NewYork . Mary got-off _ _ _ NewYork 
+stop
+question
+$travel $train Mary CentralSta NewYork big _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary CentralSta NewYork big _ 
+what did Mary take to NewYork ? Mary took _ _ what NewYork 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary CentralSta NewYork big _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to NewYork . Mary took _ _ train NewYork 
+stop
+question
+$travel $train Mary CentralSta NewYork big _ 
+did Mary travel big distance to NewYork ? Mary traveled _ big distance NewYork 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary CentralSta Boston big _ 
+1 Mary went to CentralSta . Mary went _ _ _ CentralSta 
+1 Mary bought a ticket to Boston . Mary bought _ Boston ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a big distance . Mary traveled _ big distance _ 
+1 Mary got-off at Boston . Mary got-off _ _ _ Boston 
+stop
+question
+$travel $train Mary CentralSta Boston big _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary CentralSta Boston big _ 
+what did Mary take to Boston ? Mary took _ _ what Boston 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary CentralSta Boston big _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to Boston . Mary took _ _ train Boston 
+stop
+question
+$travel $train Mary CentralSta Boston big _ 
+did Mary travel big distance to Boston ? Mary traveled _ big distance Boston 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary DowntownSt NewYork big _ 
+1 Mary went to DowntownSt . Mary went _ _ _ DowntownSt 
+1 Mary bought a ticket to NewYork . Mary bought _ NewYork ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a big distance . Mary traveled _ big distance _ 
+1 Mary got-off at NewYork . Mary got-off _ _ _ NewYork 
+stop
+question
+$travel $train Mary DowntownSt NewYork big _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary DowntownSt NewYork big _ 
+what did Mary take to NewYork ? Mary took _ _ what NewYork 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary DowntownSt NewYork big _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to NewYork . Mary took _ _ train NewYork 
+stop
+question
+$travel $train Mary DowntownSt NewYork big _ 
+did Mary travel big distance to NewYork ? Mary traveled _ big distance NewYork 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary DowntownSt Boston big _ 
+1 Mary went to DowntownSt . Mary went _ _ _ DowntownSt 
+1 Mary bought a ticket to Boston . Mary bought _ Boston ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a big distance . Mary traveled _ big distance _ 
+1 Mary got-off at Boston . Mary got-off _ _ _ Boston 
+stop
+question
+$travel $train Mary DowntownSt Boston big _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary DowntownSt Boston big _ 
+what did Mary take to Boston ? Mary took _ _ what Boston 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary DowntownSt Boston big _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to Boston . Mary took _ _ train Boston 
+stop
+question
+$travel $train Mary DowntownSt Boston big _ 
+did Mary travel big distance to Boston ? Mary traveled _ big distance Boston 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John CentralSta NewYork small _ 
+1 John went to CentralSta . John went _ _ _ CentralSta 
+1 John bought a ticket to NewYork . John bought _ NewYork ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a small distance . John traveled _ small distance _ 
+1 John got-off at NewYork . John got-off _ _ _ NewYork 
+stop
+question
+$travel $train John CentralSta NewYork small _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John CentralSta NewYork small _ 
+what did John take to NewYork ? John took _ _ what NewYork 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John CentralSta NewYork small _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to NewYork . John took _ _ train NewYork 
+stop
+question
+$travel $train John CentralSta NewYork small _ 
+did John travel big distance to NewYork ? John traveled _ big distance NewYork 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John CentralSta Boston small _ 
+1 John went to CentralSta . John went _ _ _ CentralSta 
+1 John bought a ticket to Boston . John bought _ Boston ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a small distance . John traveled _ small distance _ 
+1 John got-off at Boston . John got-off _ _ _ Boston 
+stop
+question
+$travel $train John CentralSta Boston small _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John CentralSta Boston small _ 
+what did John take to Boston ? John took _ _ what Boston 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John CentralSta Boston small _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to Boston . John took _ _ train Boston 
+stop
+question
+$travel $train John CentralSta Boston small _ 
+did John travel big distance to Boston ? John traveled _ big distance Boston 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John DowntownSt NewYork small _ 
+1 John went to DowntownSt . John went _ _ _ DowntownSt 
+1 John bought a ticket to NewYork . John bought _ NewYork ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a small distance . John traveled _ small distance _ 
+1 John got-off at NewYork . John got-off _ _ _ NewYork 
+stop
+question
+$travel $train John DowntownSt NewYork small _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John DowntownSt NewYork small _ 
+what did John take to NewYork ? John took _ _ what NewYork 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John DowntownSt NewYork small _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to NewYork . John took _ _ train NewYork 
+stop
+question
+$travel $train John DowntownSt NewYork small _ 
+did John travel big distance to NewYork ? John traveled _ big distance NewYork 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train John DowntownSt Boston small _ 
+1 John went to DowntownSt . John went _ _ _ DowntownSt 
+1 John bought a ticket to Boston . John bought _ Boston ticket _ 
+1 John got-on the train . John got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 John traveled a small distance . John traveled _ small distance _ 
+1 John got-off at Boston . John got-off _ _ _ Boston 
+stop
+question
+$travel $train John DowntownSt Boston small _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $train John DowntownSt Boston small _ 
+what did John take to Boston ? John took _ _ what Boston 
+John took a train . John took _ _ train _ 
+stop
+question
+$travel $train John DowntownSt Boston small _ 
+where did John take a train to ? John took _ _ train where 
+John took a train to Boston . John took _ _ train Boston 
+stop
+question
+$travel $train John DowntownSt Boston small _ 
+did John travel big distance to Boston ? John traveled _ big distance Boston 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary CentralSta NewYork small _ 
+1 Mary went to CentralSta . Mary went _ _ _ CentralSta 
+1 Mary bought a ticket to NewYork . Mary bought _ NewYork ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a small distance . Mary traveled _ small distance _ 
+1 Mary got-off at NewYork . Mary got-off _ _ _ NewYork 
+stop
+question
+$travel $train Mary CentralSta NewYork small _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary CentralSta NewYork small _ 
+what did Mary take to NewYork ? Mary took _ _ what NewYork 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary CentralSta NewYork small _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to NewYork . Mary took _ _ train NewYork 
+stop
+question
+$travel $train Mary CentralSta NewYork small _ 
+did Mary travel big distance to NewYork ? Mary traveled _ big distance NewYork 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary CentralSta Boston small _ 
+1 Mary went to CentralSta . Mary went _ _ _ CentralSta 
+1 Mary bought a ticket to Boston . Mary bought _ Boston ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a small distance . Mary traveled _ small distance _ 
+1 Mary got-off at Boston . Mary got-off _ _ _ Boston 
+stop
+question
+$travel $train Mary CentralSta Boston small _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary CentralSta Boston small _ 
+what did Mary take to Boston ? Mary took _ _ what Boston 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary CentralSta Boston small _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to Boston . Mary took _ _ train Boston 
+stop
+question
+$travel $train Mary CentralSta Boston small _ 
+did Mary travel big distance to Boston ? Mary traveled _ big distance Boston 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary DowntownSt NewYork small _ 
+1 Mary went to DowntownSt . Mary went _ _ _ DowntownSt 
+1 Mary bought a ticket to NewYork . Mary bought _ NewYork ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a small distance . Mary traveled _ small distance _ 
+1 Mary got-off at NewYork . Mary got-off _ _ _ NewYork 
+stop
+question
+$travel $train Mary DowntownSt NewYork small _ 
+who traveled to NewYork ? who traveled _ _ _ NewYork 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary DowntownSt NewYork small _ 
+what did Mary take to NewYork ? Mary took _ _ what NewYork 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary DowntownSt NewYork small _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to NewYork . Mary took _ _ train NewYork 
+stop
+question
+$travel $train Mary DowntownSt NewYork small _ 
+did Mary travel big distance to NewYork ? Mary traveled _ big distance NewYork 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $train Mary DowntownSt Boston small _ 
+1 Mary went to DowntownSt . Mary went _ _ _ DowntownSt 
+1 Mary bought a ticket to Boston . Mary bought _ Boston ticket _ 
+1 Mary got-on the train . Mary got-on _ _ _ train 
+1 the conductor punched the ticket . conductor punched _ _ ticket _ 
+1 Mary traveled a small distance . Mary traveled _ small distance _ 
+1 Mary got-off at Boston . Mary got-off _ _ _ Boston 
+stop
+question
+$travel $train Mary DowntownSt Boston small _ 
+who traveled to Boston ? who traveled _ _ _ Boston 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $train Mary DowntownSt Boston small _ 
+what did Mary take to Boston ? Mary took _ _ what Boston 
+Mary took a train . Mary took _ _ train _ 
+stop
+question
+$travel $train Mary DowntownSt Boston small _ 
+where did Mary take a train to ? Mary took _ _ train where 
+Mary took a train to Boston . Mary took _ _ train Boston 
+stop
+question
+$travel $train Mary DowntownSt Boston small _ 
+did Mary travel big distance to Boston ? Mary traveled _ big distance Boston 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus John bus-termin downtown small _ 
+1 John went to bus-termin . John went _ _ _ bus-termin 
+1 John waited for the bus . John waited _ _ bus _ 
+1 John got-on the downtown bus . John got-on _ downtown _ bus 
+1 John paid the driver . John paid driver _ _ _ 
+1 the bus arrived at downtown . bus arrived _ _ _ downtown 
+1 John got-off the bus . John got-off _ _ _ bus 
+stop
+question
+$travel $bus John bus-termin downtown small _ 
+who traveled to downtown ? who traveled _ _ _ downtown 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $bus John bus-termin downtown small _ 
+what did John take to downtown ? John took _ _ what downtown 
+John took a bus . John took _ _ bus _ 
+stop
+question
+$travel $bus John bus-termin downtown small _ 
+where did John take a bus to ? John took _ _ bus where 
+John took a bus to downtown . John took _ _ bus downtown 
+stop
+question
+$travel $bus John bus-termin downtown small _ 
+did John travel big distance to downtown ? John traveled _ big distance downtown 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus John bus-termin beach small _ 
+1 John went to bus-termin . John went _ _ _ bus-termin 
+1 John waited for the bus . John waited _ _ bus _ 
+1 John got-on the beach bus . John got-on _ beach _ bus 
+1 John paid the driver . John paid driver _ _ _ 
+1 the bus arrived at beach . bus arrived _ _ _ beach 
+1 John got-off the bus . John got-off _ _ _ bus 
+stop
+question
+$travel $bus John bus-termin beach small _ 
+who traveled to beach ? who traveled _ _ _ beach 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $bus John bus-termin beach small _ 
+what did John take to beach ? John took _ _ what beach 
+John took a bus . John took _ _ bus _ 
+stop
+question
+$travel $bus John bus-termin beach small _ 
+where did John take a bus to ? John took _ _ bus where 
+John took a bus to beach . John took _ _ bus beach 
+stop
+question
+$travel $bus John bus-termin beach small _ 
+did John travel big distance to beach ? John traveled _ big distance beach 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus John bus-stop downtown small _ 
+1 John went to bus-stop . John went _ _ _ bus-stop 
+1 John waited for the bus . John waited _ _ bus _ 
+1 John got-on the downtown bus . John got-on _ downtown _ bus 
+1 John paid the driver . John paid driver _ _ _ 
+1 the bus arrived at downtown . bus arrived _ _ _ downtown 
+1 John got-off the bus . John got-off _ _ _ bus 
+stop
+question
+$travel $bus John bus-stop downtown small _ 
+who traveled to downtown ? who traveled _ _ _ downtown 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $bus John bus-stop downtown small _ 
+what did John take to downtown ? John took _ _ what downtown 
+John took a bus . John took _ _ bus _ 
+stop
+question
+$travel $bus John bus-stop downtown small _ 
+where did John take a bus to ? John took _ _ bus where 
+John took a bus to downtown . John took _ _ bus downtown 
+stop
+question
+$travel $bus John bus-stop downtown small _ 
+did John travel big distance to downtown ? John traveled _ big distance downtown 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus John bus-stop beach small _ 
+1 John went to bus-stop . John went _ _ _ bus-stop 
+1 John waited for the bus . John waited _ _ bus _ 
+1 John got-on the beach bus . John got-on _ beach _ bus 
+1 John paid the driver . John paid driver _ _ _ 
+1 the bus arrived at beach . bus arrived _ _ _ beach 
+1 John got-off the bus . John got-off _ _ _ bus 
+stop
+question
+$travel $bus John bus-stop beach small _ 
+who traveled to beach ? who traveled _ _ _ beach 
+John did . John did _ _ _ _ 
+stop
+question
+$travel $bus John bus-stop beach small _ 
+what did John take to beach ? John took _ _ what beach 
+John took a bus . John took _ _ bus _ 
+stop
+question
+$travel $bus John bus-stop beach small _ 
+where did John take a bus to ? John took _ _ bus where 
+John took a bus to beach . John took _ _ bus beach 
+stop
+question
+$travel $bus John bus-stop beach small _ 
+did John travel big distance to beach ? John traveled _ big distance beach 
+John traveled a small distance . John traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus Mary bus-termin downtown small _ 
+1 Mary went to bus-termin . Mary went _ _ _ bus-termin 
+1 Mary waited for the bus . Mary waited _ _ bus _ 
+1 Mary got-on the downtown bus . Mary got-on _ downtown _ bus 
+1 Mary paid the driver . Mary paid driver _ _ _ 
+1 the bus arrived at downtown . bus arrived _ _ _ downtown 
+1 Mary got-off the bus . Mary got-off _ _ _ bus 
+stop
+question
+$travel $bus Mary bus-termin downtown small _ 
+who traveled to downtown ? who traveled _ _ _ downtown 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $bus Mary bus-termin downtown small _ 
+what did Mary take to downtown ? Mary took _ _ what downtown 
+Mary took a bus . Mary took _ _ bus _ 
+stop
+question
+$travel $bus Mary bus-termin downtown small _ 
+where did Mary take a bus to ? Mary took _ _ bus where 
+Mary took a bus to downtown . Mary took _ _ bus downtown 
+stop
+question
+$travel $bus Mary bus-termin downtown small _ 
+did Mary travel big distance to downtown ? Mary traveled _ big distance downtown 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus Mary bus-termin beach small _ 
+1 Mary went to bus-termin . Mary went _ _ _ bus-termin 
+1 Mary waited for the bus . Mary waited _ _ bus _ 
+1 Mary got-on the beach bus . Mary got-on _ beach _ bus 
+1 Mary paid the driver . Mary paid driver _ _ _ 
+1 the bus arrived at beach . bus arrived _ _ _ beach 
+1 Mary got-off the bus . Mary got-off _ _ _ bus 
+stop
+question
+$travel $bus Mary bus-termin beach small _ 
+who traveled to beach ? who traveled _ _ _ beach 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $bus Mary bus-termin beach small _ 
+what did Mary take to beach ? Mary took _ _ what beach 
+Mary took a bus . Mary took _ _ bus _ 
+stop
+question
+$travel $bus Mary bus-termin beach small _ 
+where did Mary take a bus to ? Mary took _ _ bus where 
+Mary took a bus to beach . Mary took _ _ bus beach 
+stop
+question
+$travel $bus Mary bus-termin beach small _ 
+did Mary travel big distance to beach ? Mary traveled _ big distance beach 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus Mary bus-stop downtown small _ 
+1 Mary went to bus-stop . Mary went _ _ _ bus-stop 
+1 Mary waited for the bus . Mary waited _ _ bus _ 
+1 Mary got-on the downtown bus . Mary got-on _ downtown _ bus 
+1 Mary paid the driver . Mary paid driver _ _ _ 
+1 the bus arrived at downtown . bus arrived _ _ _ downtown 
+1 Mary got-off the bus . Mary got-off _ _ _ bus 
+stop
+question
+$travel $bus Mary bus-stop downtown small _ 
+who traveled to downtown ? who traveled _ _ _ downtown 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $bus Mary bus-stop downtown small _ 
+what did Mary take to downtown ? Mary took _ _ what downtown 
+Mary took a bus . Mary took _ _ bus _ 
+stop
+question
+$travel $bus Mary bus-stop downtown small _ 
+where did Mary take a bus to ? Mary took _ _ bus where 
+Mary took a bus to downtown . Mary took _ _ bus downtown 
+stop
+question
+$travel $bus Mary bus-stop downtown small _ 
+did Mary travel big distance to downtown ? Mary traveled _ big distance downtown 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus Mary bus-stop beach small _ 
+1 Mary went to bus-stop . Mary went _ _ _ bus-stop 
+1 Mary waited for the bus . Mary waited _ _ bus _ 
+1 Mary got-on the beach bus . Mary got-on _ beach _ bus 
+1 Mary paid the driver . Mary paid driver _ _ _ 
+1 the bus arrived at beach . bus arrived _ _ _ beach 
+1 Mary got-off the bus . Mary got-off _ _ _ bus 
+stop
+question
+$travel $bus Mary bus-stop beach small _ 
+who traveled to beach ? who traveled _ _ _ beach 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$travel $bus Mary bus-stop beach small _ 
+what did Mary take to beach ? Mary took _ _ what beach 
+Mary took a bus . Mary took _ _ bus _ 
+stop
+question
+$travel $bus Mary bus-stop beach small _ 
+where did Mary take a bus to ? Mary took _ _ bus where 
+Mary took a bus to beach . Mary took _ _ bus beach 
+stop
+question
+$travel $bus Mary bus-stop beach small _ 
+did Mary travel big distance to beach ? Mary traveled _ big distance beach 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+print-stats
