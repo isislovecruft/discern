@@ -1,0 +1,315 @@
+echo ***** 11.2 Example run *****
+#
+# first make sure the parameters are right
+chain 1
+withlex 1
+withhfm 1
+babbling 1
+print_mistakes 0
+log_lexicon 1
+topsearch 3.0
+midsearch 1.0
+tracenc 2
+tsettle 9
+epsilon 0.0001
+aliveact 0.5
+minact 0.5
+maxact 2.5
+gammaexc 0.37
+gammainh -0.1
+withinerr 0.15
+clear-networks
+init-stats
+read-and-paraphrase
+$restaurant $coffee John fish Denny's bad small 
+1 John went to Denny's . John went _ _ _ Denny's 
+0 John seated John . John seated _ _ John _ 
+1 John asked the waiter for fish . John asked waiter _ fish _ 
+1 John ate a bad fish . John ate _ bad fish _ 
+0 John left a small tip . John left waiter small tip _ 
+0 John paid the cashier . John paid cashier _ _ _ 
+0 John left Denny's . John left _ _ _ Denny's 
+log_lexicon 0
+stop
+read
+$restaurant $fancy Mary steak Leone's good big 
+1 Mary went to Leone's . Mary went _ _ _ Leone's 
+0 the waiter seated Mary . waiter seated _ _ Mary _ 
+1 Mary asked the waiter for steak . Mary asked waiter _ steak _ 
+0 Mary ate a good steak . Mary ate _ good steak _ 
+0 Mary paid the waiter . Mary paid waiter _ _ _ 
+1 Mary left a big tip . Mary left waiter big tip _ 
+0 Mary left Leone's . Mary left _ _ _ Leone's 
+stop
+read
+$shopping $electronics Mary tv CircuitCty _ _ 
+1 Mary went to CircuitCty . Mary went _ _ _ CircuitCty 
+1 Mary looked for good tv . Mary looked _ good tv _ 
+0 Mary asked the staff questions about tv . Mary asked staff tv questions _ 
+1 Mary took the best tv . Mary took _ best tv _ 
+0 Mary paid the cashier . Mary paid cashier _ _ _ 
+0 Mary left CircuitCty . Mary left _ _ _ CircuitCty 
+stop
+read
+$shopping $electronics John tv RadioShack _ _ 
+1 John went to RadioShack . John went _ _ _ RadioShack 
+1 John looked for good tv . John looked _ good tv _ 
+0 John asked the staff questions about tv . John asked staff tv questions _ 
+1 John took the best tv . John took _ best tv _ 
+0 John paid the cashier . John paid cashier _ _ _ 
+0 John left RadioShack . John left _ _ _ RadioShack 
+stop
+read
+$travel $plane Mary dfw sfo big _ 
+1 Mary went to dfw . Mary went _ _ _ dfw 
+1 Mary checked-in for a flight to sfo . Mary checked-in _ sfo flight _ 
+0 Mary waited at the gate for boarding . Mary waited _ _ boarding gate 
+0 Mary got-on the plane . Mary got-on _ _ _ plane 
+0 the plane took-off from dfw . plane took-off _ _ _ dfw 
+1 the plane arrived at sfo . plane arrived _ _ _ sfo 
+0 Mary got-off the plane . Mary got-off _ _ _ plane 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+what did Mary eat at Leone's ? Mary ate _ _ what Leone's 
+Mary ate a good steak . Mary ate _ good steak _ 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+how did Mary like steak at Leone's ? Mary thought _ what steak Leone's 
+Mary thought steak was good at Leone's . Mary thought _ good steak Leone's 
+stop
+question
+$travel $plane Mary dfw sfo big _ 
+where did Mary take a plane to ? Mary took _ _ plane where 
+Mary took a plane to sfo . Mary took _ _ plane sfo 
+stop
+question
+$travel $plane Mary dfw sfo big _ 
+did Mary travel big distance to sfo ? Mary traveled _ big distance sfo 
+Mary traveled a big distance . Mary traveled _ big distance _ 
+stop
+question
+$restaurant $coffee John fish Denny's bad small 
+where did John eat fish ? John ate _ _ fish where 
+John ate fish at Denny's . John ate _ _ fish Denny's 
+stop
+question
+$shopping $electronics Mary tv CircuitCty _ _ 
+where did Mary buy tv ? Mary bought _ _ tv where 
+Mary bought tv at CircuitCty . Mary bought _ _ tv CircuitCty 
+stop
+question
+$shopping $electronics John tv RadioShack _ _ 
+where did John buy tv ? John bought _ _ tv where 
+John bought tv at RadioShack . John bought _ _ tv RadioShack 
+midsearch 3.0
+stop
+question
+$restaurant $coffee John fish Denny's bad small 
+who ate ? who ate _ _ fish Denny's 
+John did . John did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+who ate steak ? who ate _ _ steak Leone's 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $coffee John fish Denny's bad small 
+what did John eat ? John ate _ _ what Denny's 
+John ate a bad fish . John ate _ bad fish _ 
+stop
+question
+$shopping $electronics John tv RadioShack _ _ 
+who bought tv ? who bought _ _ tv RadioShack 
+John did . John did _ _ _ _ 
+stop
+question
+$shopping $electronics Mary tv CircuitCty _ _ 
+who bought tv at CircuitCty ? who bought _ _ tv CircuitCty 
+Mary did . Mary did _ _ _ _ 
+stop
+question
+$restaurant $fancy Mary steak Leone's good big 
+how did Mary like lobster at Leone's ? Mary thought _ what steak Leone's 
+Mary thought steak was good at Leone's . Mary thought _ good steak Leone's 
+stop
+midsearch 1.0
+question
+$travel $plane John lax jfk big _ 
+what did John take to jfk ? John took _ _ what jfk 
+John took a plane . John took _ _ plane _ 
+clear-networks
+stop
+read-and-paraphrase
+$restaurant $coffee John fish Denny's bad small 
+1 John went to Denny's . John went _ _ _ Denny's 
+0 John seated John . John seated _ _ John _ 
+1 John asked the waiter for fish . John asked waiter _ fish _ 
+1 John ate a bad fish . John ate _ bad fish _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+1 John left a small tip . John left waiter small tip _ 
+0 John left Denny's . John left _ _ _ Denny's 
+stop
+read
+$restaurant $coffee John fish Denny's bad small 
+1 John went to Denny's . John went _ _ _ Denny's 
+0 John seated John . John seated _ _ John _ 
+1 John asked the waiter for fish . John asked waiter _ fish _ 
+1 John left a small tip . John left waiter small tip _ 
+1 John ate a bad fish . John ate _ bad fish _ 
+1 John paid the cashier . John paid cashier _ _ _ 
+0 John left Denny's . John left _ _ _ Denny's 
+#
+echo ***** 11.3 Cleaning Up Errors  *****
+#
+# make bubbles slightly smaller
+maxact 2.0
+gammaexc 0.5
+stop
+clear-networks
+read
+$restaurant $fast Mary hamburger BurgerKing bad none 
+1 Mary went to BurgerKing . Mary went _ _ _ BurgerKing 
+1 Mary asked the cashier for hamburger . Mary asked cashier _ hamburger _ 
+1 Mary paid the cashier . Mary paid cashier _ _ _ 
+1 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary ate a small hamburger . Mary ate _ small hamburger _ 
+1 the hamburger tasted bad . Mary tasted _ bad hamburger _ 
+1 Mary left BurgerKing . Mary left _ _ _ BurgerKing 
+stop
+question
+$restaurant $fast Mary hamburger BurgerKing bad none 
+how did Mary like hamburger at BurgerKing ? Mary thought _ what hamburger BurgerKing 
+Mary thought hamburger was bad at BurgerKing . Mary thought _ bad hamburger BurgerKing 
+stop
+read
+$restaurant $fancy John lobster Leone's good small 
+1 John went to Leone's . John went _ _ _ Leone's 
+0 the waiter seated John . waiter seated _ _ John _ 
+1 John asked the waiter for lobster . John asked waiter _ lobster _ 
+0 John ate a good lobster . John ate _ good lobster _ 
+0 John paid the waiter . John paid waiter _ _ _ 
+1 John left a small tip . John left waiter small tip _ 
+0 John left Leone's . John left _ _ _ Leone's 
+stop
+read-and-paraphrase
+$travel $train Mary CentralSta NewYork small _ 
+1 Mary went to CentralSta . Mary went _ _ _ CentralSta 
+1 Mary bought a ticket to NewYork . Mary bought _ NewYork ticket _ 
+0 Mary got-on the train . Mary got-on _ _ _ train 
+0 the conductor punched the ticket . conductor punched _ _ ticket _ 
+0 Mary traveled a small distance . Mary traveled _ small distance _ 
+1 Mary got-off at NewYork . Mary got-off _ _ _ NewYork 
+stop
+question
+$travel $train Mary CentralSta NewYork small _ 
+did Mary travel big distance to NewYork ? Mary traveled _ big distance NewYork 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+log_lexicon 1
+question
+$restaurant $fancy John lobster Leone's good small 
+what did John eat at Leone's ? John ate _ _ what Leone's 
+John ate a good lobster . John ate _ good lobster _ 
+log_lexicon 0
+#
+echo ***** 11.4 Error Behavior *****
+#
+stop
+clear-networks
+read-and-paraphrase
+$travel $bus Mary bus-stop beach small _ 
+1 Mary went to bus-stop . Mary went _ _ _ bus-stop 
+1 Mary waited for the bus . Mary waited _ _ bus _ 
+0 Mary got-on the beach bus . Mary got-on _ beach _ bus 
+1 Mary paid the driver . Mary paid driver _ _ _ 
+0 the bus arrived at beach . bus arrived _ _ _ beach 
+1 Mary got-off the bus . Mary got-off _ _ _ bus 
+stop
+question
+$travel $bus Mary bus-stop beach small _ 
+where did Mary take a bus to ? Mary took _ _ bus where 
+Mary took a bus to beach . Mary took _ _ bus beach 
+stop
+question
+$travel $bus Mary bus-stop beach small _ 
+did Mary travel big distance to downtown ? Mary traveled _ big distance beach 
+Mary traveled a small distance . Mary traveled _ small distance _ 
+stop
+read-and-paraphrase
+$shopping $grocery John vegetables Ralph's _ _ 
+1 John went to Ralph's . John went _ _ _ Ralph's 
+0 John took a big cart . John took _ big cart _ 
+1 John compared vegetables prices . John compared _ vegetables prices _ 
+1 John took several vegetables . John took _ several vegetables _ 
+0 John waited in a big line . John waited _ big _ line 
+0 John paid the cashier . John paid cashier _ _ _ 
+0 John left Ralph's . John left _ _ _ Ralph's 
+stop
+question
+$shopping $grocery John vegetables Ralph's _ _ 
+where did John buy vegetables ? John bought _ _ vegetables where 
+John bought vegetables at Ralph's . John bought _ _ vegetables Ralph's 
+stop
+log_lexicon 1
+read-and-paraphrase
+$restaurant $fast Mary fries BurgerKing bad none 
+1 Mary went to BurgerKing . Mary went _ _ _ BurgerKing 
+1 Mary asked the cashier for fries . Mary asked cashier _ fries _ 
+0 Mary paid the cashier . Mary paid cashier _ _ _ 
+0 Mary seated Mary . Mary seated _ _ Mary _ 
+1 Mary ate a small fries . Mary ate _ small fries _ 
+0 the fries tasted bad . Mary tasted _ bad fries _ 
+0 Mary left BurgerKing . Mary left _ _ _ BurgerKing 
+stop
+question
+$restaurant $fast Mary fries BurgerKing bad none 
+what did Mary eat at BurgerKing ? Mary ate _ _ what BurgerKing 
+Mary ate a small fries . Mary ate _ small fries _ 
+stop
+question
+$restaurant $fast Mary fries BurgerKing bad none 
+where did Mary eat fries ? Mary ate _ _ fries where 
+Mary ate fries at BurgerKing . Mary ate _ _ fries BurgerKing 
+stop
+read-and-paraphrase
+$shopping $clothing John shoes Broadway _ _ 
+1 John went to Broadway . John went _ _ _ Broadway 
+1 John looked for good shoes . John looked _ good shoes _ 
+0 John tried on several shoes . John tried John several shoes _ 
+1 John took the best shoes . John took _ best shoes _ 
+0 John paid the cashier . John paid cashier _ _ _ 
+0 John left Broadway . John left _ _ _ Broadway 
+log_lexicon 0
+clear-networks
+stop
+read
+$shopping $clothing Mary jeans Bullock's _ _ 
+1 Mary went to Bullock's . Mary went _ _ _ Bullock's 
+1 Mary looked for good jeans . Mary looked _ good jeans _ 
+0 Mary tried on several jeans . Mary tried Mary several jeans _ 
+1 Mary took the best jeans . Mary took _ best jeans _ 
+0 Mary paid the cashier . Mary paid cashier _ _ _ 
+0 Mary left Bullock's . Mary left _ _ _ Bullock's 
+stop
+question
+$shopping $clothing Mary jeans Bullock's _ _ 
+what did Mary buy at Bullock's ? Mary bought _ _ what Bullock's 
+Mary bought jeans . Mary bought _ _ jeans _ 
+stop
+read
+$shopping $clothing Mary jeans Broadway _ _ 
+1 Mary went to Broadway . Mary went _ _ _ Broadway 
+1 Mary looked for good jeans . Mary looked _ good jeans _ 
+0 Mary tried on several jeans . Mary tried Mary several jeans _ 
+1 Mary took the best jeans . Mary took _ best jeans _ 
+0 Mary paid the cashier . Mary paid cashier _ _ _ 
+0 Mary left Broadway . Mary left _ _ _ Broadway 
+stop
+question
+$shopping $clothing Mary jeans Bullock's _ _ 
+what did Mary buy at Bullock's ? Mary bought _ _ what Bullock's 
+Mary bought jeans . Mary bought _ _ jeans _ 
+print-stats

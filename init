@@ -1,0 +1,44 @@
+# This is the main initialization file for DISCERN.
+# It needs to specify at least the data sizes and the configuration files.
+#
+# Just for debugging, let's turn logging on:
+babbling 1
+#
+# The story and caserole rep sizes must be given first (REQUIRED):
+nslot 7
+ncase 6
+#
+# Then the configuration file names (REQUIRED)
+# (lrepfile and srepfile must be given before the simulation files):
+lrepfile lreps
+srepfile sreps
+procfile procsimu
+hfmfile hfmsimu
+hfminpfile hfminp
+lexfile lexsimu
+#
+# The defaults for simulation and logging parameters:
+chain 1
+withlex 1
+withhfm 1
+babbling 1
+print_mistakes 0
+log_lexicon 0
+ignore_stops 0
+#
+# The hfm and trace feature map parameters need to be set before 
+#  any input can be processed so it may be done here.
+topsearch 3.0
+midsearch 1.0
+tracenc 2
+tsettle 10
+epsilon 0.0001
+aliveact 0.5
+minact 0.5
+maxact 2.0
+gammaexc 0.5
+gammainh -0.1
+clear-networks
+#
+# withinerr needs to be specified before statistics are collected.
+withinerr 0.15
