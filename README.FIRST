@@ -1,0 +1,77 @@
+DISCERN: Processing script-based stories
+========================================
+Version 2.1.1, 1/8/97
+
+Copyright (C) 1994,1997 Risto Miikkulainen
+
+This package contains the C-code and data for running the complete,
+trained DISCERN system for reading, paraphrasing, and answering
+questions about script-based stories. The software allows the user to
+interact with the model in real time through an X11(R5) graphics
+interface. It also prints detailed log output during processing on the
+standard output and collects statistics about the overall system
+performance. See the file INSTALL for instructions on how to install
+DISCERN in your system; see USERDOC for instructions on how to run the
+program; see FILES for explanation on the software package itself.
+
+In case you don't know what DISCERN is, see
+@Book{miikkulainen:subsymbolic,
+  author = 	"Risto Miikkulainen",
+  title = 	"Subsymbolic Natural Language Processing: {A}n
+		 Integrated Model of Scripts, Lexicon, and Memory",
+  publisher = 	"MIT Press",
+  year = 	"1993",
+  address = "Cambridge, MA"
+}
+A short precis (from PSYCOLOQUY) of this book and a summary paper are
+also available by anonymous ftp from
+ftp.cs.utexas.edu:pub/neural-nets/discern, and in World Wide Web under
+NLP publications in http://www.cs.utexas.edu/users/nn.  An X11 graphics
+demo, showing DISCERN in processing the example stories discussed in the
+book, can be run remotely under World Wide Web at
+http://www.cs.utexas.edu/users/nn/pages/demos/discern/discern.html.
+
+DISCERN was put together from the final results produced by the three
+training programs available in the discern directory: PROC developed the
+processing modules, DISLEX the lexicon, and HFM organized the episodic
+memory.  Although DISCERN performance package does not contain any
+training code, it can serve as a starting point for various demo
+programs in modular connectionist NLP. It shows how various
+architectures (SRN and feedforward backpropagation, feature maps,
+association matrices) can be put together into a single, large model
+that interacts with the user on-line. There are general routines for
+managing the simulation, collecting performance statistics, visualizing
+the system performance and interacting with it through a command
+interface and the mouse.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 as published
+by the Free Software Foundation. This program is distributed in the hope
+that it will be useful, but without any warranty; without even the
+implied warranty of merchantability or fitness for a particular purpose.
+See the GNU General Public License for more details.
+
+We hope that this software will be a useful starting point for your own
+explorations in connectionist NLP. The software is provided as is,
+however, we will do our best to maintain it and accommodate
+suggestions. If you want to be notified of future releases of the
+software or have questions, comments, bug reports or suggestions, send
+email to discern@cs.utexas.edu.
+
+
+Versions
+--------
+v1.0 8/9/93 risto
+v2.0 8/9/94 risto
+- rewrote the X code, cleaned up
+
+v2.1 9/21/94 risto
+- added mouse support for examining lexicon and episodic memory
+- added command line options, inputfile parameter
+- reorganized the structure somewhat; separated stats.c
+- renamed qa-files proc (for processing modules)
+- included up-to-date procsimu file: order of weights changed
+- removed nword, nsent keywords; changed several other keywords
+
+v2.1.1 1/8/97 risto
+- fixed color allocation bug (screens with more than 256 colors)

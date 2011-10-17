@@ -1,0 +1,108 @@
+#
+# hfminp -- the hierarchical feature map label file.
+#
+# The hfm program uses this file as input to test the map organization
+#  (except the prototype and instance definitions have been removed).
+# Each line contains one story representation: the labels identifying the 
+#  story (script, track, and role-binding abbreviation) and the words that 
+#  fill the slots in the slot-filler representation for the story. 
+# DISCERN uses this file to set up labels for the episodic memory display.
+# Do not put any comments or other junk inside the data.
+#
+slot-representations
+REST FANCY JLMB $restaurant $fancy John lobster MaMaison good big
+REST FANCY JLLB $restaurant $fancy John lobster Leone's good big
+REST FANCY JSMB $restaurant $fancy John steak MaMaison good big
+REST FANCY JSLB $restaurant $fancy John steak Leone's good big
+REST FANCY MLMB $restaurant $fancy Mary lobster MaMaison good big
+REST FANCY MLLB $restaurant $fancy Mary lobster Leone's good big
+REST FANCY MSMB $restaurant $fancy Mary steak MaMaison good big
+REST FANCY MSLB $restaurant $fancy Mary steak Leone's good big
+REST FANCY JLMS $restaurant $fancy John lobster MaMaison good small
+REST FANCY JLLS $restaurant $fancy John lobster Leone's good small
+REST FANCY JSMS $restaurant $fancy John steak MaMaison good small
+REST FANCY JSLS $restaurant $fancy John steak Leone's good small
+REST FANCY MLMS $restaurant $fancy Mary lobster MaMaison good small
+REST FANCY MLLS $restaurant $fancy Mary lobster Leone's good small
+REST FANCY MSMS $restaurant $fancy Mary steak MaMaison good small
+REST FANCY MSLS $restaurant $fancy Mary steak Leone's good small
+REST COFFEE JSDG $restaurant $coffee John spaghetti Denny's good big
+REST COFFEE JSNG $restaurant $coffee John spaghetti Norms good big
+REST COFFEE JFDG $restaurant $coffee John fish Denny's good big
+REST COFFEE JFNG $restaurant $coffee John fish Norms good big
+REST COFFEE MSDG $restaurant $coffee Mary spaghetti Denny's good big
+REST COFFEE MSNG $restaurant $coffee Mary spaghetti Norms good big
+REST COFFEE MFDG $restaurant $coffee Mary fish Denny's good big
+REST COFFEE MFNG $restaurant $coffee Mary fish Norms good big
+REST COFFEE JSDB $restaurant $coffee John spaghetti Denny's bad small
+REST COFFEE JSNB $restaurant $coffee John spaghetti Norms bad small
+REST COFFEE JFDB $restaurant $coffee John fish Denny's bad small
+REST COFFEE JFNB $restaurant $coffee John fish Norms bad small
+REST COFFEE MSDB $restaurant $coffee Mary spaghetti Denny's bad small
+REST COFFEE MSNB $restaurant $coffee Mary spaghetti Norms bad small
+REST COFFEE MFDB $restaurant $coffee Mary fish Denny's bad small
+REST COFFEE MFNB $restaurant $coffee Mary fish Norms bad small
+REST FAST JHM $restaurant $fast John hamburger McDonald's bad none
+REST FAST JHB $restaurant $fast John hamburger BurgerKing bad none
+REST FAST JFM $restaurant $fast John fries McDonald's bad none
+REST FAST JFB $restaurant $fast John fries BurgerKing bad none
+REST FAST MHM $restaurant $fast Mary hamburger McDonald's bad none
+REST FAST MHB $restaurant $fast Mary hamburger BurgerKing bad none
+REST FAST MFM $restaurant $fast Mary fries McDonald's bad none
+REST FAST MFB $restaurant $fast Mary fries BurgerKing bad none
+SHOP CLOTH JSO $shopping $clothing John shoes Broadway _ _
+SHOP CLOTH JSL $shopping $clothing John shoes Bullock's _ _
+SHOP CLOTH JJO $shopping $clothing John jeans Broadway _ _
+SHOP CLOTH JJL $shopping $clothing John jeans Bullock's _ _
+SHOP CLOTH MSO $shopping $clothing Mary shoes Broadway _ _
+SHOP CLOTH MSL $shopping $clothing Mary shoes Bullock's _ _
+SHOP CLOTH MJO $shopping $clothing Mary jeans Broadway _ _
+SHOP CLOTH MJL $shopping $clothing Mary jeans Bullock's _ _
+SHOP ELECTR JCR $shopping $electronics John CD-player RadioShack _ _
+SHOP ELECTR JCC $shopping $electronics John CD-player CircuitCty _ _
+SHOP ELECTR JTR $shopping $electronics John tv RadioShack _ _
+SHOP ELECTR JTC $shopping $electronics John tv CircuitCty _ _
+SHOP ELECTR MCR $shopping $electronics Mary CD-player RadioShack _ _
+SHOP ELECTR MCC $shopping $electronics Mary CD-player CircuitCty _ _
+SHOP ELECTR MTR $shopping $electronics Mary tv RadioShack _ _
+SHOP ELECTR MTC $shopping $electronics Mary tv CircuitCty _ _
+SHOP GROCERY JSR $shopping $grocery John softdrinks Ralph's _ _
+SHOP GROCERY JSS $shopping $grocery John softdrinks Safeway _ _
+SHOP GROCERY JVR $shopping $grocery John vegetables Ralph's _ _
+SHOP GROCERY JVS $shopping $grocery John vegetables Safeway _ _
+SHOP GROCERY MSR $shopping $grocery Mary softdrinks Ralph's _ _
+SHOP GROCERY MSS $shopping $grocery Mary softdrinks Safeway _ _
+SHOP GROCERY MVR $shopping $grocery Mary vegetables Ralph's _ _
+SHOP GROCERY MVS $shopping $grocery Mary vegetables Safeway _ _
+TRAVEL PLANE JLJ $travel $plane John lax jfk big _
+TRAVEL PLANE JLS $travel $plane John lax sfo big _
+TRAVEL PLANE JDJ $travel $plane John dfw jfk big _
+TRAVEL PLANE JDS $travel $plane John dfw sfo big _
+TRAVEL PLANE MLJ $travel $plane Mary lax jfk big _
+TRAVEL PLANE MLS $travel $plane Mary lax sfo big _
+TRAVEL PLANE MDJ $travel $plane Mary dfw jfk big _
+TRAVEL PLANE MDS $travel $plane Mary dfw sfo big _
+TRAVEL TRAIN JCNB $travel $train John CentralSta NewYork big _
+TRAVEL TRAIN JCBB $travel $train John CentralSta Boston big _
+TRAVEL TRAIN JDNB $travel $train John DowntownSt NewYork big _
+TRAVEL TRAIN JDBB $travel $train John DowntownSt Boston big _
+TRAVEL TRAIN MCNB $travel $train Mary CentralSta NewYork big _
+TRAVEL TRAIN MCBB $travel $train Mary CentralSta Boston big _
+TRAVEL TRAIN MDNB $travel $train Mary DowntownSt NewYork big _
+TRAVEL TRAIN MDBB $travel $train Mary DowntownSt Boston big _
+TRAVEL TRAIN JCNS $travel $train John CentralSta NewYork small _
+TRAVEL TRAIN JCBS $travel $train John CentralSta Boston small _
+TRAVEL TRAIN JDNS $travel $train John DowntownSt NewYork small _
+TRAVEL TRAIN JDBS $travel $train John DowntownSt Boston small _
+TRAVEL TRAIN MCNS $travel $train Mary CentralSta NewYork small _
+TRAVEL TRAIN MCBS $travel $train Mary CentralSta Boston small _
+TRAVEL TRAIN MDNS $travel $train Mary DowntownSt NewYork small _
+TRAVEL TRAIN MDBS $travel $train Mary DowntownSt Boston small _
+TRAVEL BUS JTD $travel $bus John bus-termin downtown small _
+TRAVEL BUS JTB $travel $bus John bus-termin beach small _
+TRAVEL BUS JSD $travel $bus John bus-stop downtown small _
+TRAVEL BUS JSB $travel $bus John bus-stop beach small _
+TRAVEL BUS MTD $travel $bus Mary bus-termin downtown small _
+TRAVEL BUS MTB $travel $bus Mary bus-termin beach small _
+TRAVEL BUS MSD $travel $bus Mary bus-stop downtown small _
+TRAVEL BUS MSB $travel $bus Mary bus-stop beach small _

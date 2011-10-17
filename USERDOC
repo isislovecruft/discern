@@ -1,0 +1,437 @@
+Using the DISCERN performance system
+====================================
+
+This directory contains the code and data for running the complete,
+trained DISCERN system. After you have successfully installed the system
+(see INSTALL), say "discern" to run it. DISCERN will read system
+specs from the file "init", loading up the various weight files and
+setting default values for various parameters.  A graphics window will
+come up with a number of buttons (described below).  Click on "Run" to
+start the simulation: the graphics display shows activity propagation
+through the networks, and detailed log output is generated in the
+standard output.  You can stop and continue the simulation at any time,
+read and simulate new input files, ask questions, print performance
+statistics, and change various system parameters through the command
+interface.
+
+More generally, DISCERN is run with
+discern [options] [simulation file] [input file]
+where the options are
+  -help                 Prints this message
+  -graphics             Bring up graphics display
+  -nographics           Text output only
+  -owncmap              Use a separate colormap
+  -noowncmap            Use the existing colormap
+  -delay <sec>          Delay in updating the screen (in seconds)
+
+The meanings of the options are described in detail below.  If no
+filenames are specified on the command line, the file "init" is used for
+the initialization file, and the file "input-example" as the default
+input.  The first parameter is taken to be the simufilename, and second
+(if given) the default inputfilename.
+
+
+
+X Interface
+===========
+
+Although training and testing networks without graphics is certainly
+enough for proving the point, graphics displays are often indispensable
+for debugging the model and understanding what is actually going
+on. This is the main purpose of this program: to visualize what is
+actually going on in DISCERN as it is doing some fairly complicated
+high-level processing, and allowing you to interact with it on-line to
+get a better feel of the model.
+
+Network displays
+----------------
+The display shows the unit activations, labels on the word assemblies,
+target patterns, and the current output error for each network and
+the word sequence read or generated so far. In color displays,
+the activation scale between 0.0 and 1.0 shown with black (0.0) - red
+(0.333) - yellow (0.667) - white (1.0).  Gray-scale from black to white
+indicates the same values in B&W displays.
+
+For the sentence and story parser and cue former, the input layer is on
+top, the (possible) previous hidden layer and hidden layer in the
+middle, and the output layer and the target pattern at the bottom. The
+order is reversed for the answer producer and the story and sentence
+generators. The word representations at the input and output assemblies
+are labeled. Each label indicates the word in the semantic lexicon that
+is the closest to the current pattern. If this word is not the same as
+the target word (i.e. the output is wrong), the target word is given in
+parenthesis (e.g. "*boy(girl)*"; The symbol "_" indicates the blank, or
+all-0 representation; this symbol is only used when the word is
+incorrect). If the label does not fit the box it is truncated at right.
+
+The labels on the lexical and semantic map units indicate the maximally
+responding units for each word in the lexicon. The label at top left of
+the window indicates the maximally responding unit, and also whether
+this map is currently used as the input or the associative map.
+
+On the episodic memory display, the top-level map is shown at top right,
+the middle-level maps around it in the top-right quadrant, and the
+bottom-level maps elsewhere in the window corresponding their position
+in the middle-level maps (actually, the top and middle level maps are
+automatically placed over those bottom-level maps that win the least
+number of input items). The labels indicate the images of the different
+scripts, tracks and role bindings in the entire 96 story test set. The
+positive lateral weights that store the traces are shown as lines
+pointing towards the destination unit of the connection. The length and
+width of the line indicates the strength of the connection. On the top
+left of this window, the labels of the maximally responding units at the
+three levels are shown, and a letter indicating whether this is a stored
+(S) or retrieved (R) representation.
+
+Mouse support for feature maps
+------------------------------
+There are too many associative weights in the lexicon to be displayed
+all at once. You can examine the weights of any particular unit by
+clicking it with the mouse. That unit will be turned on (made white),
+and the color coding in the other map shows the strengths of the
+associative weights to each unit. The log line on top left also
+indicates the current closest word for both the source unit and target
+unit with the largest associative weight. The mouse support is turned
+off while the lexicon is in the middle of processing input.
+
+If you click on an episodic memory unit with the mouse, the log line on
+top of the bottom level map will list the nearest words represented by
+the weights of that unit. On the top and middle level maps, if any of
+the input lines within a word are actually passed down to lower-level
+maps, the word is put in parenthesis (because it really represents an
+average, and the nearest word representation does not always make
+sense). In the middle and bottom level maps, the representation is
+constructed from the input weights of the unit and the weights of its
+parent units at higher levels.The log line also shows the current
+average distance of the representation from the nearest words, counting
+only those lines that are accurately represented by this unit (and not
+passed down to lower levels). After the distance, a "/" and a number
+indicating how many of those lines there are are shown. The mouse
+support is turned off while the memory is in the middle of processing
+input.
+
+Buttons
+-------
+On top of the display there are a number of buttons that control the run:
+
+"Run": click here and DISCERN will start a simulation run, reading input
+ from the default input file. While the simulation is running, the "Run"
+ button changes into a "Stop" button:
+
+"Stop"; you can interrupt the run at any time by clicking on the "Stop"
+ button, and it changes to the "Run" button. Click "Run" again and the
+ simulation continues.
+
+"Step" is a toggle switch; when on, it causes DISCERN to pause after
+ every major propagation in the network. Click "Run" to continue.
+
+"Clear" interrupts the currently running simulation and clears the
+ network activations. After hitting "Run" the simulation continues from
+ the beginning of the current inputfile.
+
+"Quit" terminates the program.
+
+The area to the right of the "Step" button is a command window (see list
+of commands below). It comes up with "file input-example" as the default
+command (indicating that the name of the default input file is
+"input-example").  Anything you type into the DISCERN display will go to
+the command window. You can edit the text with standard emacs-style
+commands.  Hitting "Return" will send the command to DISCERN.
+
+Resources
+---------
+The display interacts with the X system in the normal manner. You can
+iconize the display, resize it, change the default parameters in the
+app-defaults or .Xdefaults file, use the standard X Toolkit options,
+abbreviate the options, etc. A few comments on the more important
+resources (look in the file Discern.ad for more details):
+
+Unfortunately the fonts are not resizable in X11R5. If the display size
+changes a lot, you may have to specify other fonts in the app-defaults
+file. Also, if your display has few available colors, it may be a good
+idea to set "Discern*owncmap" to "true"; in this case, DISCERN will come
+up with a complete, private colormap instead of using whatever colors it
+can get (this resource may be overridden with -owncmap and -noowncmap
+options). Lastly, on some fast machines you may actually want to slow
+down the display. You can do that with "Discern*delay" with a given
+number of seconds, or using the -delay command-line option.
+
+
+
+Commands
+========
+
+DISCERN reads commands from the command window on the X interface (or if
+the display is off, from the terminal I/O interface), or from an
+inputfile.  The commands are (with variable information inside <>):
+
+Various things to do:
+--------------------
+"file <filename>"
+Read commands from the file "filename". Can be used in files to read
+sections of input recursively and to set up parameters differently for
+the same input (see the file input-test-all for an example).
+
+"text-question <words separated by blanks> ?"
+You can type in a question such as "Who ate lobster at Leone's ?", and
+DISCERN will process it. The question is not sensitive to case. The
+number of words exceeding the nwords parameter will be ignored as will
+be words that are not in DISCERN's vocabulary. Remember to separate the
+"?" from the previous word with a space.
+
+"list-params"
+Lists the current weight and input file names and various parameters.
+
+"init-stats"
+Initializes the performance statistics.
+
+"print-stats"
+Prints out performance statistics collected since the last "init-stats".
+For each module in paraphrasing and question answering separately, the
+percentage of correctly-identifyable words (out of all words),
+percentage of correctly identifyable instances, percentage of output
+units within 0.15 of the correct value, and the average error per output
+unit is printed in the standard output.
+
+"clear-networks"
+Clears the networks (but does not interrupt a possibly ongoing simulation).
+
+"displaying <1/0>"
+"displaying 1" turns the X display on; "displaying 0" turns it off.
+
+"quit"
+Terminates the program.
+
+"stop"
+(meaningful only in an input file) Causes the simulation to stop. Click
+"Run" (or hit return if the display is not on) to continue.
+
+"echo <text>"
+(inputfile) Prints <text> in the log output.
+
+"#<text"
+(inputfile) The entire line is treated as a comment (ignored).
+
+"read"
+(inputfile) Tells DISCERN to read a story given in the next nsent+1
+input lines (or less; giving a line that does not begin with a number
+terminates the story).  Each story consists of the words for the
+slot-filler representation, followed by at most nsent sentence
+specification. Each one of these consists of a number indicating whether
+the sentence is included in the input or just in the paraphrase,
+followed by the words of the sentence, a period, and then the target
+case role assignments ("_" indicates blank). This command is ignored in
+the command window but not in the terminal I/O interface so that you can
+input a file through the standard input if you wish; see the file
+input-test-all.
+
+"read-and-paraphrase"
+(inputfile) Tells DISCERN to read and paraphrase a story given in the
+next nsent+1 (or less) input lines. Ignored in the command window.
+
+"question"
+(inputfile) Tells DISCERN to process the question specified in the next
+3 input lines. Ignored in the command window. The first line specifies the
+slot-filler representation of the story this question refers to. The
+second line gives the word sequence of the question, a question mark as
+a delimiter, and then the case-role assignment of the question
+sentence. The third line gives the sequence, period and case roles for
+the answer sentence.
+
+
+Various simulation parameters
+-----------------------------
+"displaying <1/0>"
+"displaying 1" turns the X display on; "displaying 0" turns it off.
+
+"chain <1/0>"
+When on, the output of one module is fed to the input of the next. When
+off, clean and correct representations (taken from the lreps and sreps
+file) are used instead.
+
+"withhfm <1/0>"
+Whether to include the episodic memory in the simulation runs or use the
+output of the story parser directly as input to story generator and
+answer producer.
+
+"withlex <1/0>"
+Whether to include the lexicon in the simulation runs or use semantic
+representation directly as I/O.
+
+"delay <int>"
+Number of seconds each major propagation display is delayed (useful
+when the display is really fast).
+
+"babbling <1/0>"
+When on, detailed log output will be printed in the standard output.
+
+"print_mistakes <1/0>"
+When on, erroneus words (together with the correct word) will
+be printed in the standard output even when babbling is off.
+
+"log_lexicon <1/0>"
+When on, the propagation in the lexicon (lexical <-> semantic
+representations) will be logged in the standard output (if babbling is
+on). It is easier to read the output if log_lexicon is off.
+
+"ignore_stops <1/0>"
+Do not stop when "stop" command is encountered in an input file (useful
+for collecting statistics).
+
+"topsearch <float>"
+The search threshold for script level of the episodic memory.
+
+"midsearch <float>"
+The search threshold for track level of the episodic memory.
+
+"withinerr <float>"
+Statistics collected within e.g. 0.15 of the correct value.
+
+
+Configuration Files
+-------------------
+The weight files should not really be changed on the fly unless you
+really know what you are doing.
+
+"lrepfile <filename>"
+Lexical word labels and representation vectors.
+
+"srepfile <filename>"
+Semantic word labels and representation vectors, and also a list of
+instance words and those words that are only used as internal symbols
+(like $restaurant, which is not in I/O word).
+
+"procfile <filename>"
+Processing module weights. The word representations in this file are
+ignored; instead, the representations are read from the srepfile (above).
+
+"hfmfile <filename>"
+Hierarchical feature map weights.
+
+"hfminpfile <filename>"
+Labels for the cells in the hierarchical feature maps (needed for
+Xdisplay only).
+
+"lexfile <filename>"
+Weights for the lexicon module.
+
+
+Configuration Parameters
+------------------------
+Should only be changed when the new configuration files so require.
+
+"nslot <positive integer>"
+Number of slots in the script representation.
+
+"ncase <positive integer>"
+Number of slots in the case role representation.
+
+
+Trace feature map parameters
+----------------------------
+"tracenc <nonnegative integer>"
+Radius of the stored trace.
+
+"tsettle <positive integer>"
+How many settling iterations in memory retrieval.
+
+"epsilon <positive float>"
+If activity of trace map unit A is epsilon larger than B, a positive
+connection from B to A is formed.
+
+"aliveact <positive float>"
+If the response is oscillating and the lower value is less than
+aliveact, consider it a failed retrieval.
+
+"minact <float>"
+Lower threshold of the piecewise linear sigmoid approximation.
+
+"maxact <float>"
+Upper threshold of the piecewise linear sigmoid approximation.
+
+"gammaexc <positive float>"
+Magnitude of the excitatory lateral weight in the trace map (\gamma_E).
+
+"gammainh <negative float>"
+Magnitude of the inhibitory lateral weight in the trace map (\gamma_I).
+
+
+
+Inputfiles
+==========
+
+The file "input-example" contains the example run discussed in detail in
+Chapter 11 of "Subsymbolic Natural Language Processing".
+
+The file "input-all-complete" is a collection of all stories where every
+sentence has been included in the input. "input-all-incomplete" has the
+same stories but only three sentences per story. You can run a full
+performance statistics check with "discern <input-test-all".
+
+You can also easily create your own input files, following the
+explanations for the above commands and the examples in the existing
+input files.
+
+
+
+Running DISCERN without graphics
+================================
+
+Sometimes it is useful to run DISCERN without graphics display, e.g.
+when collecting performance statistics in the background.  If you don't
+have X11, you can still run DISCERN remotely (without graphics) on
+another machine that does (which is sometimes useful for starting
+simulations remotely). In the text mode, the same commands are available
+as in the graphics mode: they are entered through the terminal interface
+and interleaved with log output.  A good way to run long performance
+tests is write the commands into a file, run DISCERN in text mode, and
+take standard input from that file. The simulation can be interrupted
+with ^C, which will cause DISCERN to return to the top command level
+(equivalently to hitting "Clear" in graphics mode).
+
+Whether the graphics display is brought up depends on various settings.
+First, the default is what you have defined in the application defaults
+for "Discern*bringupdisplay". If it is "true", DISCERN will come up with
+graphics, otherwise without it. If no application defaults file can be
+found, DISCERN will come up with graphics. You can override the
+application defaults by specifying -graphics or -nographics in the
+command line.  It is also possible to turn off the display on the fly
+with the "displaying 0" command.
+
+
+
+How to change the defaults
+==========================
+
+If you don't like the default fonts, colors, filenames, window sizes
+etc., you can change them in the "Discern" application defaults file (or
+in .Xdefaults). You can also do it using the standard command line option
+-xrm ....  If you want to change the default configuration
+parameters, edit the file "init", or prepare another initfile and give
+that as a command-line parameter to DISCERN ("discern my-init-file").
+If you want to use the DISCERN interface to illustrate another system,
+it will take some coding, but it should be fairly straightforward to
+implement other modular systems in the DISCERN framework.
+
+
+
+Credits etc.
+============
+
+Copyright (C) 1994 Risto Miikkulainen
+
+This software can be copied, modified and distributed freely for
+educational and research purposes, provided that this notice is included
+in the code, and the author is acknowledged in any materials and reports
+that result from its use. It may not be used for commercial purposes
+without expressed permission from the author.
+
+We hope that this software will be a useful starting point for your own
+explorations in connectionist NLP. The software is provided as is,
+however, we will do our best to maintain it and accommodate
+suggestions. If you want to be notified of future releases of the
+software or have questions, comments, bug reports or suggestions, send
+email to discern@cs.utexas.edu.
+
+Special thanks to Jimmy Jusuf for help in making DISCERN
+into a portable package under X11.

@@ -1,0 +1,18 @@
+# Performance statistics for Section 11.1
+# Run in the background with e.g. "discern <input-test-all>output-test-all &"
+# Need to turn off displaying in the init file
+#
+# Run through the file without stopping
+ignore_stops 1
+#
+# First in isolation (tables 11.1 and 11.2)
+chain 0
+file input-all-complete
+#
+# Then connected (tables 11.3 and 11.4)
+chain 1
+file input-all-complete
+#
+# And finally on incomplete stories (tables 11.5 and 11.6)
+file input-all-incomplete
+quit
